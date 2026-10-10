@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>365스마일한의원 | 인천 서구 가정동 한의원 | 문원열 대표원장</title>
 <meta name="description" content="인천 서구 가정동 365스마일한의원. 문원열 대표원장이 한방내과, 한방부인과, 한방소아과, 침구과, 한방재활의학과 진료를 안내합니다.">
+<meta name="theme-color" content="#1f7a6d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="365스마일">
 <style>
   :root {
     --brand: #1f7a6d;
@@ -33,6 +40,7 @@
     --line: #263a37;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
   html { scroll-behavior: smooth; }
   body {
     font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
@@ -133,6 +141,14 @@
   .links a b { display: block; color: var(--brand); margin-bottom: 4px; }
   .links a span { color: var(--muted); font-size: .9rem; }
 
+  /* app install */
+  .app { display: grid; gap: 28px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 800px) { .app { grid-template-columns: 1.3fr 1fr; } }
+  .app .qr { justify-self: center; background: #fff; padding: 14px; border-radius: 18px; border: 1px solid var(--line); text-align: center; }
+  .app .qr img { width: 200px; height: 200px; display: block; }
+  .app .qr small { color: #5d6e6c; }
+  .app button.btn { border: 0; cursor: pointer; font: inherit; font-weight: 700; background: var(--brand); color: #fff; }
+
   footer { background: var(--bg-soft); border-top: 1px solid var(--line); padding: 36px 0; color: var(--muted); font-size: .9rem; }
   footer .logo { font-size: 1rem; }
 
@@ -154,6 +170,7 @@
       <li><a href="#location">오시는 길</a></li>
       <li><a href="#column">칼럼</a></li>
       <li><a href="#links">블로그·유튜브</a></li>
+      <li><a href="#app">앱 설치</a></li>
     </ul>
     <a class="call" href="tel:000-0000-0000">전화 예약</a>
   </nav>
@@ -283,6 +300,26 @@
   </div>
 </section>
 
+<!-- APP INSTALL -->
+<section id="app">
+  <div class="wrap app">
+    <div>
+      <div class="eyebrow">APP</div>
+      <h2>휴대폰에 앱으로 설치하기</h2>
+      <p class="lead">홈 화면에 365스마일한의원 아이콘을 두고 진료시간 확인, 전화 예약, 길찾기를 바로 이용하세요. 앱스토어 없이 설치되며 용량도 거의 차지하지 않습니다.</p>
+      <div class="btns" style="margin-top:0">
+        <button type="button" class="btn" data-install-btn hidden>📲 앱 설치하기</button>
+        <a class="btn btn-primary" href="install.html">설치 방법 보기</a>
+      </div>
+      <p class="note" data-install-done hidden>지금 앱으로 실행 중입니다.</p>
+    </div>
+    <div class="qr">
+      <img src="icons/qr-install.svg" alt="앱 설치 페이지 QR 코드" loading="lazy">
+      <small>카메라로 찍으면 설치 페이지가 열려요</small>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -294,5 +331,6 @@
   </div>
 </footer>
 
+<script src="install.js"></script>
 </body>
 </html>
