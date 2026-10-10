@@ -1,0 +1,24 @@
+{
+  "name": "365스마일한의원",
+  "short_name": "365스마일",
+  "description": "인천 서구 가정동 365스마일한의원 - 진료과목, 진료시간, 오시는 길, 전화 예약",
+  "id": "./",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "ko",
+  "background_color": "#ffffff",
+  "theme_color": "#1f7a6d",
+  "categories": ["health", "medical"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "진료시간", "url": "./#hours", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "오시는 길", "url": "./#location", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
