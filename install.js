@@ -1,8 +1,10 @@
 // 서비스 워커 등록 + 앱 설치 버튼 처리 (index.html, install.html 공용)
 (function () {
+  // install.js와 같은 폴더(사이트 루트)의 sw.js를 등록해 하위 폴더 페이지에서도 동작하게 함
+  var swUrl = new URL("sw.js", document.currentScript.src).href;
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("sw.js").catch(function () {});
+      navigator.serviceWorker.register(swUrl).catch(function () {});
     });
   }
 

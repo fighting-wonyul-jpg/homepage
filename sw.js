@@ -1,6 +1,6 @@
 // 365스마일한의원 서비스 워커
 // 파일을 수정한 뒤에는 VERSION 값을 올려야 사용자 앱에 새 내용이 반영됩니다.
-const VERSION = "v1";
+const VERSION = "v2";
 const CACHE = `smile365-${VERSION}`;
 const PRECACHE = [
   "./",
