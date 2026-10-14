@@ -807,9 +807,12 @@
   .btn-primary { background: var(--brand); color: #fff; }
   .btn-ghost { border: 1.5px solid var(--brand); color: var(--brand); }
   .lead-p { color: var(--muted); margin-bottom: 8px; }
-  .cat-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 6px; padding: 0; list-style: none; }
-  .cat-nav a { display: inline-block; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-soft); color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 600; }
+  .cat-label { margin: 22px 0 8px; font-weight: 700; font-size: .95rem; }
+  .cat-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 6px; padding: 0; list-style: none; }
+  .cat-nav a { display: inline-block; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--text); text-decoration: none; font-size: .92rem; font-weight: 600; }
   .cat-nav a:hover { border-color: var(--brand); color: var(--brand); }
+  .cat-nav a[aria-current="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .cat-nav small { opacity: .75; margin-left: 3px; font-weight: 600; }
   .cat { scroll-margin-top: 72px; }
   .cat h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .cat { margin-top: 36px; }
@@ -833,17 +836,19 @@
   <p class="crumb">건강 칼럼</p>
   <h1>인천 한의원 건강 칼럼 모음</h1>
   <p class="lead-p">인천 서구 가정동 365스마일한의원 문원열 대표원장이 증상별 원인과 한방 치료, 생활 관리법을 정리한 칼럼입니다. 궁금한 증상을 골라 읽어 보세요.</p>
-  <ul class="cat-nav" aria-label="분류 바로가기">
-    <li><a href="#cat-1">척추·관절 통증</a></li>
-    <li><a href="#cat-2">두통·얼굴·신경</a></li>
-    <li><a href="#cat-3">마음·수면·심장</a></li>
-    <li><a href="#cat-4">소화기</a></li>
-    <li><a href="#cat-5">귀·코·눈·호흡기</a></li>
-    <li><a href="#cat-6">피부</a></li>
-    <li><a href="#cat-7">여성 건강</a></li>
-    <li><a href="#cat-8">남성·비뇨기</a></li>
-    <li><a href="#cat-9">소아</a></li>
-    <li><a href="#cat-10">체질·만성질환</a></li>
+  <p class="cat-label">분류별로 보기</p>
+  <ul class="cat-nav">
+    <li><a href="./" data-cat="all" aria-current="true">전체<small>116</small></a></li>
+    <li><a href="#cat-1" data-cat="cat-1">척추·관절 통증<small>19</small></a></li>
+    <li><a href="#cat-2" data-cat="cat-2">두통·얼굴·신경<small>11</small></a></li>
+    <li><a href="#cat-3" data-cat="cat-3">마음·수면·심장<small>10</small></a></li>
+    <li><a href="#cat-4" data-cat="cat-4">소화기<small>11</small></a></li>
+    <li><a href="#cat-5" data-cat="cat-5">귀·코·눈·호흡기<small>14</small></a></li>
+    <li><a href="#cat-6" data-cat="cat-6">피부<small>12</small></a></li>
+    <li><a href="#cat-7" data-cat="cat-7">여성 건강<small>16</small></a></li>
+    <li><a href="#cat-8" data-cat="cat-8">남성·비뇨기<small>5</small></a></li>
+    <li><a href="#cat-9" data-cat="cat-9">소아<small>12</small></a></li>
+    <li><a href="#cat-10" data-cat="cat-10">체질·만성질환<small>6</small></a></li>
   </ul>
   <section class="cat" id="cat-1">
     <h2>척추·관절 통증 <small>19편</small></h2>
@@ -1011,6 +1016,23 @@
       <a class="item" href="hypothyroidism.html"><img src="../images/col-hypothyroidism.jpg" alt="" loading="lazy"><span><small>갑상선기능저하증</small>피곤하고 붓고 추위를 탄다면, 갑상선기능저하증과 한방 관리</span></a>
     </div>
   </section>
+<script>
+(function(){
+  var links=document.querySelectorAll('.cat-nav a'), secs=document.querySelectorAll('.cat');
+  function show(id){
+    secs.forEach(function(s){ s.hidden = !(id==='all' || s.id===id); });
+    links.forEach(function(a){ a.setAttribute('aria-current', a.dataset.cat===id ? 'true' : 'false'); });
+  }
+  links.forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault(); var id=a.dataset.cat; show(id);
+      history.replaceState(null,'', id==='all' ? location.pathname : '#'+id);
+    });
+  });
+  function fromHash(){ var h=location.hash.slice(1); show(h && document.getElementById(h) ? h : 'all'); }
+  window.addEventListener('hashchange', fromHash); fromHash();
+})();
+</script>
   <div class="cta">
     <a class="btn btn-primary" href="tel:0507-1495-4600">전화로 상담 예약 0507-1495-4600</a>
     <a class="btn btn-ghost" href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">네이버 지도 길찾기</a>
