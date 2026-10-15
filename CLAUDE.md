@@ -11,6 +11,8 @@
 - `column/<slug>.html`: 칼럼 한 편 = 파일 하나. 빌드 과정 없이 정적 HTML입니다.
 - `column/index.html`: 칼럼 목록. 검색창, 많이 찾는 칼럼, 12개 분류, 목록이 들어 있으며 `tools/build_index.py`로 다시 만듭니다.
 - `column/doctor.html`: 원장 소개 (유튜브 영상 삽입, 블로그 링크).
+- `column/privacy.html`: 개인정보 처리 안내 (`tools/make_privacy.py`). 모든 페이지 맨 아래 링크.
+- `column/ga.js`: 구글 애널리틱스(G-650CYRNZYH)와 클릭 기록. 이벤트: click_booking, click_kakao, click_call, click_map, click_blog, click_youtube (link_location: mobile_bar, pc_quick, header, visit_info, bottom_buttons, blog_box, author_box), search(search_term). 모든 페이지 `<head>`에 들어감 (`tools/apply_analytics.py`).
 - `images/col-<slug>.jpg`: 칼럼 표지 (1600x900). `images/logo-*.png`: 로고.
 - `sitemap.xml`: 칼럼 목록, 원장 소개, 칼럼 전체.
 - `tools/site.json`: 분류, 많이 찾는 칼럼, 칼럼별 짧은 이름(labels), 검색 동의어. **분류를 바꾸면 여기를 고치고 build_index.py 실행.**
