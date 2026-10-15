@@ -19,7 +19,15 @@ def card(x):
     return f'      <a class="item" href="{x}.html" data-k="{html.escape(" ".join(ks),quote=True)}"><img src="../images/{img}" alt="" loading="lazy"><span><small>{html.escape(LABEL[x])}</small>{h1}</span></a>'
 nav=[f'    <li><a href="./" data-cat="all" aria-current="true">전체<small>{len(allslugs)}</small></a></li>']
 nav+=[f'    <li><a href="#cat-{i}" data-cat="cat-{i}">{html.escape(n)}<small>{len(ss)}</small></a></li>' for i,(n,ss) in enumerate(CAT,1)]
+import datetime
+_m=datetime.date.today().month
+NOW='spring' if 3<=_m<=5 else 'summer' if 6<=_m<=8 else 'autumn' if 9<=_m<=11 else 'winter'
 pop="\n".join(f'    <li><a href="{x}.html">{html.escape(LABEL[x])}</a></li>' for x in POP)
+for sea,xs in S.get('seasonal',{}).items():
+    for x in xs:
+        if x in POP: continue
+        pop+="\n"+f'    <li data-season="{sea}"'+('' if sea==NOW else ' hidden')+f'><a href="{x}.html">{html.escape(LABEL[x])}</a></li>'
+
 secs="\n".join(f'''  <section class="cat" id="cat-{i}">
     <h2>{html.escape(n)} <small>{len(ss)}편</small></h2>
     <div class="grid2">
@@ -32,7 +40,7 @@ SEARCH='''  <div class="search">
     <p class="search-msg" id="qmsg" aria-live="polite"></p>
   </div>
 '''
-TOP=f'''  <p class="cat-label">많이 찾는 칼럼</p>
+TOP=f'''  <p class="cat-label">요즘 많이 찾는 칼럼</p>
   <ul class="pop">
 {pop}
   </ul>
