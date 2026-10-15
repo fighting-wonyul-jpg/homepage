@@ -295,6 +295,8 @@
   .nav-r { display: flex; align-items: center; gap: 8px; }
   .book { display: none; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--brand); color: var(--brand); text-decoration: none; font-size: .9rem; font-weight: 700; }
   @media (min-width: 640px) { .book { display: inline-block; } }
+  .hblog { display: none; padding: 7px 16px; border-radius: 999px; border: 1.5px solid #03a94d; color: #03a94d; text-decoration: none; font-size: .9rem; font-weight: 700; }
+  @media (max-width: 639px) { .nav-r .call { display: none; } .hblog { display: inline-block; } }
   .btn-kakao { background: #fee500; color: #191919; }
   .mbar a.m-kakao { background: #fee500; border-color: #fee500; color: #191919; }
   .quick { display: none; }
@@ -315,7 +317,7 @@
 <header>
   <nav class="nav">
     <a class="logo" href="./" aria-label="365스마일한의원 건강 칼럼 홈"><img class="logo-mark" src="../images/logo-mark.png" alt="" width="34" height="36"><img class="word-light" src="../images/logo-word.png" alt="365스마일한의원" width="226" height="28"><img class="word-dark" src="../images/logo-word-dark.png" alt="" width="226" height="28"></a>
-    <span class="nav-r"><a class="book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약</a><a class="call" href="tel:0507-1495-4600">전화 예약</a></span>
+    <span class="nav-r"><a class="book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약</a><a class="call" href="tel:0507-1495-4600">전화 예약</a><a class="hblog" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a></span>
   </nav>
 </header>
 
