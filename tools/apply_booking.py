@@ -29,7 +29,7 @@ for f in sorted(os.listdir(COL)):
     m=re.search(r'<nav class="mbar" aria-label="빠른 연결">\n(.*?)</nav>',s,re.S)
     lines=m.group(1).strip('\n').split('\n'); call_l=[x for x in lines if 'm-call' in x][0]
     blog=[x for x in lines if 'blog.naver' in x][0]; mp=[x for x in lines if 'map.naver' in x][0]
-    new='\n'.join([call_l.replace('>전화 예약<','>전화<'),f'  <a class="m-book" {A}>예약</a>',mp,blog])+'\n'
+    new='\n'.join([call_l.replace('>전화 예약<','>전화<'),f'  <a class="m-book" {A}>네이버 예약</a>',mp,blog])+'\n'
     s=s[:m.start(1)]+new+s[m.end(1):]
     s=s.replace('    .mbar a { flex: 1; text-align: center; padding: 10px 4px; border-radius: 10px; font-weight: 700; font-size: .95rem;',
                 '    .mbar a { flex: 1; text-align: center; padding: 10px 2px; border-radius: 10px; font-weight: 700; font-size: .88rem; white-space: nowrap;')
