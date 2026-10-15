@@ -39,7 +39,12 @@
       "author": {
         "@type": "Person",
         "name": "문원열",
-        "jobTitle": "한의사, 365스마일한의원 대표원장"
+        "jobTitle": "한의사, 365스마일한의원 대표원장",
+        "url": "https://fighting-wonyul-jpg.github.io/homepage/column/doctor.html",
+        "sameAs": [
+          "https://www.youtube.com/@365smilekmd",
+          "https://m.blog.naver.com/kimyiho8787"
+        ]
       },
       "publisher": {
         "@type": "MedicalClinic",
@@ -276,6 +281,13 @@
   .visit dt { font-weight: 700; color: var(--brand); }
   .visit dd { margin: 0; }
   .visit p { margin: 10px 0 0; font-size: .85rem; color: var(--muted); }
+  .author { display: flex; gap: 14px; align-items: flex-start; margin-top: 32px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; }
+  .author img { width: 48px; height: auto; flex: none; }
+  .author p { margin: 0; }
+  .author .who { font-weight: 800; }
+  .author .who small { display: block; font-weight: 600; color: var(--muted); font-size: .85rem; }
+  .author .bio { margin-top: 4px; font-size: .95rem; }
+  .author a { display: inline-block; margin-top: 6px; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -290,7 +302,7 @@
 <article>
   <p class="crumb"><a href="./">건강 칼럼</a> · 인천 소아비만 한의원</p>
   <h1>아이 체중이 또래보다 많이 늘었다면, 소아 비만 관리</h1>
-  <p class="meta">365스마일한의원 문원열 대표원장 · 2026년 10월 14일</p>
+  <p class="meta">365스마일한의원 <a href="doctor.html">문원열 대표원장</a> · 2026년 10월 14일</p>
   <img class="cover" src="../images/col-child-obesity.jpg" alt="줄넘기 줄과 과일 일러스트">
 
   <div class="answer">
@@ -467,6 +479,15 @@
     <dt>Q8. 관리 기간은 얼마나 되나요?</dt>
     <dd>대개 3~6개월 단위로 백분위 변화를 확인하며, 생활 습관은 그 뒤에도 꾸준히 이어 갑니다.</dd>
   </dl>
+
+  <section class="author" aria-label="글쓴이">
+    <img src="../images/logo-mark.png" alt="" width="48" height="51">
+    <div>
+      <p class="who">문원열 대표원장<small>한의사 · 365스마일한의원</small></p>
+      <p class="bio">인천 서구 가정동 한자리에서 10년 넘게 진료하며, 환자 한 분 한 분의 아픔을 깊이 들여다보고 근본적인 원인을 찾는 진료를 지향합니다.</p>
+      <a href="doctor.html">원장 소개 보기 →</a>
+    </div>
+  </section>
 
   <section class="visit">
     <h2>진료 안내</h2>
