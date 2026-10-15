@@ -19,7 +19,7 @@ CSS='''  .quick { display: none; }
 </style>'''
 MENU=f'''<nav class="quick" aria-label="빠른 상담">
   <a class="q-kakao" href="{KAKAO}" target="_blank" rel="noopener">카톡 문의</a>
-  <a class="q-book" href="{BOOK}" target="_blank" rel="noopener">예약</a>
+  <a class="q-book" href="{BOOK}" target="_blank" rel="noopener">네이버 예약</a>
   <a class="q-tel" href="tel:0507-1495-4600">전화 예약<small>0507-1495-4600</small></a>
   <a href="{MAP}" target="_blank" rel="noopener">길찾기</a>
   <a class="q-blog" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a>

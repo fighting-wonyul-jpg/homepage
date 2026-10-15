@@ -15,7 +15,7 @@ for f in sorted(os.listdir(COL)):
     if 'booking.naver.com' in s: continue
     call='<a class="call" href="tel:0507-1495-4600">전화 예약</a>'
     assert s.count(call)==1,f
-    s=s.replace(call,f'<span class="nav-r"><a class="book" {A}>예약</a>{call}</span>')
+    s=s.replace(call,f'<span class="nav-r"><a class="book" {A}>네이버 예약</a>{call}</span>')
     s=s.replace('</style>',CSS,1)
     # 진료 안내: 전화 줄 다음에 예약 줄
     t='<div><dt>전화</dt><dd><a href="tel:0507-1495-4600">0507-1495-4600</a></dd></div>'
