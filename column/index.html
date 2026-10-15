@@ -1177,6 +1177,16 @@
   .item img { width: 120px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; display: block; }
   .item small { display: block; color: var(--brand); font-weight: 700; font-size: .85rem; }
   .item span { font-size: .95rem; line-height: 1.5; }
+  .blogbox { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 26px 0; padding: 16px 18px; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--line); }
+  .blogbox p { flex: 1 1 220px; margin: 0; font-size: .95rem; }
+  .blogbox a { flex: none; padding: 9px 16px; border-radius: 10px; background: var(--brand); color: #fff; font-weight: 700; text-decoration: none; }
+  .mbar { display: none; }
+  @media (max-width: 760px) {
+    body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+    .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); gap: 8px; box-shadow: 0 -2px 10px rgba(0,0,0,.08); }
+    .mbar a { flex: 1; text-align: center; padding: 10px 4px; border-radius: 10px; font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--brand); color: var(--brand); }
+    .mbar a.m-call { background: var(--brand); color: #fff; }
+  }
 </style>
 </head>
 <body>
@@ -1190,6 +1200,10 @@
   <p class="crumb">건강 칼럼</p>
   <h1>인천 한의원 건강 칼럼 모음</h1>
   <p class="lead-p">인천 서구 가정동 365스마일한의원 문원열 대표원장이 증상별 원인과 한방 치료, 생활 관리법을 정리한 칼럼입니다. 궁금한 증상을 골라 읽어 보세요.</p>
+  <div class="blogbox">
+    <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
+    <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>
+  </div>
   <p class="cat-label">분류별로 보기</p>
   <ul class="cat-nav">
     <li><a href="./" data-cat="all" aria-current="true">전체<small>175</small></a></li>
@@ -1458,5 +1472,11 @@
     <a class="btn btn-ghost" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">공식 블로그 바로가기</a>
   </div>
 </article>
+<nav class="mbar" aria-label="빠른 연결">
+  <a class="m-call" href="tel:0507-1495-4600">전화 예약</a>
+  <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a>
+  <a href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">길찾기</a>
+</nav>
+
 </body>
 </html>
