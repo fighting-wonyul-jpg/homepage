@@ -7,6 +7,8 @@ A=f'href="{BOOK}" target="_blank" rel="noopener"'
 CSS='''  .nav-r { display: flex; align-items: center; gap: 8px; }
   .book { display: none; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--brand); color: var(--brand); text-decoration: none; font-size: .9rem; font-weight: 700; }
   @media (min-width: 640px) { .book { display: inline-block; } }
+  .hblog { display: none; padding: 7px 16px; border-radius: 999px; border: 1.5px solid #03a94d; color: #03a94d; text-decoration: none; font-size: .9rem; font-weight: 700; }
+  @media (max-width: 639px) { .nav-r .call { display: none; } .hblog { display: inline-block; } }
 </style>'''
 n=0
 for f in sorted(os.listdir(COL)):
@@ -15,7 +17,7 @@ for f in sorted(os.listdir(COL)):
     if 'booking.naver.com' in s: continue
     call='<a class="call" href="tel:0507-1495-4600">전화 예약</a>'
     assert s.count(call)==1,f
-    s=s.replace(call,f'<span class="nav-r"><a class="book" {A}>네이버 예약</a>{call}</span>')
+    s=s.replace(call,f'<span class="nav-r"><a class="book" {A}>네이버 예약</a>{call}<a class="hblog" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a></span>')
     s=s.replace('</style>',CSS,1)
     # 진료 안내: 전화 줄 다음에 예약 줄
     t='<div><dt>전화</dt><dd><a href="tel:0507-1495-4600">0507-1495-4600</a></dd></div>'
