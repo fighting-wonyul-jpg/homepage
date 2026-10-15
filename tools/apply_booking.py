@@ -7,7 +7,7 @@ A=f'href="{BOOK}" target="_blank" rel="noopener"'
 CSS='''  .nav-r { display: flex; align-items: center; gap: 8px; }
   .book { display: none; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--brand); color: var(--brand); text-decoration: none; font-size: .9rem; font-weight: 700; }
   @media (min-width: 640px) { .book { display: inline-block; } }
-  .hblog { display: none; padding: 7px 16px; border-radius: 999px; border: 1.5px solid #03a94d; color: #03a94d; text-decoration: none; font-size: .9rem; font-weight: 700; }
+  .hblog { display: none; padding: 7px 16px; border-radius: 999px; border: 1.5px solid var(--brand); color: var(--brand); text-decoration: none; font-size: .9rem; font-weight: 700; }
   @media (max-width: 639px) { .nav-r .call { display: none; } .hblog { display: inline-block; } }
 </style>'''
 n=0

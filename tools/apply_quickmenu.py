@@ -14,7 +14,6 @@ CSS='''  .quick { display: none; }
     .quick a.q-book { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
     .quick a.q-tel small { display: block; font-size: .72rem; font-weight: 600; color: var(--muted); white-space: nowrap; letter-spacing: -.02em; }
     .quick a.q-top { color: var(--muted); font-weight: 600; }
-    .quick a.q-blog { color: #03a94d; border-color: #03a94d; }
   }
 </style>'''
 MENU=f'''<nav class="quick" aria-label="빠른 상담">
