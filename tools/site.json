@@ -18,20 +18,27 @@
     "intercostal-neuralgia",
     "neck-tension",
     "rotator-cuff-tear",
-    "whiplash",
     "finger-arthritis"
    ]
   ],
   [
-   "허리·다리·관절 통증",
+   "허리·골반 통증",
    [
     "lumbar-disc",
     "acute-back-pain",
     "spinal-stenosis",
+    "spondylolisthesis",
     "sciatica",
+    "piriformis",
     "scoliosis",
     "coccyx-pain",
-    "hip-pain",
+    "si-joint-pain",
+    "hip-pain"
+   ]
+  ],
+  [
+   "무릎·발·관절",
+   [
     "knee-arthritis",
     "patellofemoral",
     "ankle-sprain",
@@ -39,16 +46,21 @@
     "plantar-fasciitis",
     "bunion",
     "tarsal-tunnel",
-    "si-joint-pain",
     "leg-cramps",
     "fibromyalgia",
-    "traffic-accident",
     "rheumatoid",
     "gout",
-    "spondylolisthesis",
     "meniscus-tear",
-    "pes-anserine",
-    "piriformis"
+    "pes-anserine"
+   ]
+  ],
+  [
+   "교통사고 후유증",
+   [
+    "traffic-accident",
+    "whiplash",
+    "accident-headache",
+    "accident-insomnia"
    ]
   ],
   [
@@ -69,8 +81,7 @@
     "forgetfulness",
     "dementia-prevention",
     "parkinsons",
-    "stroke-sequelae",
-    "accident-headache"
+    "stroke-sequelae"
    ]
   ],
   [
@@ -91,8 +102,7 @@
     "arrhythmia",
     "bradycardia",
     "tachycardia",
-    "chest-pain",
-    "accident-insomnia"
+    "chest-pain"
    ]
   ],
   [
@@ -181,16 +191,21 @@
     "endometriosis",
     "vaginitis",
     "cystitis",
+    "menopause",
+    "menopause-diet",
+    "adenomyosis"
+   ]
+  ],
+  [
+   "임신·출산",
+   [
     "infertility",
     "recurrent-miscarriage",
     "morning-sickness",
     "pregnancy-edema",
     "postpartum",
     "postpartum-depression",
-    "postpartum-weight",
-    "menopause",
-    "menopause-diet",
-    "adenomyosis"
+    "postpartum-weight"
    ]
   ],
   [
