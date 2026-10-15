@@ -18,7 +18,7 @@ BODY=f'''<article>
   <h1>문원열 대표원장 소개</h1>
   <p class="meta">365스마일한의원 · 인천 서구 가정동</p>
 
-  <img class="doc-photo" src="../images/doctor.jpg" alt="365스마일한의원 문원열 대표원장" width="546" height="340">
+  <img class="doc-photo" src="../images/doctor.jpg" alt="365스마일한의원 문원열 대표원장" width="801" height="497">
 
   <blockquote class="quote">
     <p>좋은 의사는 질병을 치료하고,<br>최선의 의사는 질병을 가진 환자를 치료한다.</p>
