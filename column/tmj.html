@@ -288,6 +288,7 @@
   .author .who small { display: block; font-weight: 600; color: var(--muted); font-size: .85rem; }
   .author .bio { margin-top: 4px; font-size: .95rem; }
   .author a { display: inline-block; margin-top: 6px; font-weight: 700; }
+  .author .links-row { display: flex; flex-wrap: wrap; gap: 4px 16px; }
   .nav-r { display: flex; align-items: center; gap: 8px; }
   .book { display: none; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--brand); color: var(--brand); text-decoration: none; font-size: .9rem; font-weight: 700; }
   @media (min-width: 640px) { .book { display: inline-block; } }
@@ -302,6 +303,7 @@
     .quick a.q-book { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
     .quick a.q-tel small { display: block; font-size: .72rem; font-weight: 600; color: var(--muted); white-space: nowrap; letter-spacing: -.02em; }
     .quick a.q-top { color: var(--muted); font-weight: 600; }
+    .quick a.q-blog { color: #03a94d; border-color: #03a94d; }
   }
 </style>
 </head>
@@ -476,7 +478,7 @@
     <div>
       <p class="who">문원열 대표원장<small>한의사 · 365스마일한의원</small></p>
       <p class="bio">인천 서구 가정동 한자리에서 10년 넘게 진료하며, 환자 한 분 한 분의 아픔을 깊이 들여다보고 근본적인 원인을 찾는 진료를 지향합니다.</p>
-      <a href="doctor.html">원장 소개 보기 →</a>
+      <p class="links-row"><a href="doctor.html">원장 소개 보기 →</a><a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">원장님 블로그 →</a></p>
     </div>
   </section>
 
@@ -530,6 +532,7 @@
   <a class="q-book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">예약</a>
   <a class="q-tel" href="tel:0507-1495-4600">전화 예약<small>0507-1495-4600</small></a>
   <a href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">길찾기</a>
+  <a class="q-blog" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a>
   <a class="q-top" href="#top">맨 위로 ↑</a>
 </nav>
 <nav class="mbar" aria-label="빠른 연결">

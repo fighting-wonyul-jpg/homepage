@@ -14,6 +14,7 @@ CSS='''  .quick { display: none; }
     .quick a.q-book { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
     .quick a.q-tel small { display: block; font-size: .72rem; font-weight: 600; color: var(--muted); white-space: nowrap; letter-spacing: -.02em; }
     .quick a.q-top { color: var(--muted); font-weight: 600; }
+    .quick a.q-blog { color: #03a94d; border-color: #03a94d; }
   }
 </style>'''
 MENU=f'''<nav class="quick" aria-label="빠른 상담">
@@ -21,6 +22,7 @@ MENU=f'''<nav class="quick" aria-label="빠른 상담">
   <a class="q-book" href="{BOOK}" target="_blank" rel="noopener">예약</a>
   <a class="q-tel" href="tel:0507-1495-4600">전화 예약<small>0507-1495-4600</small></a>
   <a href="{MAP}" target="_blank" rel="noopener">길찾기</a>
+  <a class="q-blog" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a>
   <a class="q-top" href="#top">맨 위로 ↑</a>
 </nav>
 <nav class="mbar"'''
