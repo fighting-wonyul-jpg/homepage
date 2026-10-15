@@ -273,7 +273,6 @@
     .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); gap: 6px; box-shadow: 0 -2px 10px rgba(0,0,0,.08); }
     .mbar a { flex: 1; text-align: center; padding: 10px 2px; border-radius: 10px; font-weight: 700; font-size: .88rem; white-space: nowrap; text-decoration: none; border: 1.5px solid var(--brand); color: var(--brand); }
     .mbar a.m-call, .mbar a.m-book { background: var(--brand); color: var(--on-brand); }
-    .mbar a.m-book { flex: 1.4; }
   }
   .visit { margin-top: 32px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-soft); }
   .visit h2 { margin: 0 0 10px; font-size: 1.15rem; }
@@ -294,14 +293,24 @@
   @media (min-width: 640px) { .book { display: inline-block; } }
   .btn-kakao { background: #fee500; color: #191919; }
   .mbar a.m-kakao { background: #fee500; border-color: #fee500; color: #191919; }
+  .quick { display: none; }
+  @media (min-width: 1000px) {
+    .quick { display: flex; flex-direction: column; gap: 6px; position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 40; width: 112px; padding: 8px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    .quick a { display: block; padding: 10px 4px; border-radius: 10px; text-align: center; text-decoration: none; font-size: .82rem; font-weight: 700; line-height: 1.35; color: var(--brand); border: 1.5px solid var(--line); }
+    .quick a:hover { border-color: var(--brand); }
+    .quick a.q-kakao { background: #fee500; border-color: #fee500; color: #191919; }
+    .quick a.q-book { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+    .quick a.q-tel small { display: block; font-size: .72rem; font-weight: 600; color: var(--muted); white-space: nowrap; letter-spacing: -.02em; }
+    .quick a.q-top { color: var(--muted); font-weight: 600; }
+  }
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <nav class="nav">
     <a class="logo" href="./" aria-label="365스마일한의원 건강 칼럼 홈"><img class="logo-mark" src="../images/logo-mark.png" alt="" width="34" height="36"><img class="word-light" src="../images/logo-word.png" alt="365스마일한의원" width="226" height="28"><img class="word-dark" src="../images/logo-word-dark.png" alt="" width="226" height="28"></a>
-    <span class="nav-r"><a class="book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약</a><a class="call" href="tel:0507-1495-4600">전화 예약</a></span>
+    <span class="nav-r"><a class="book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">예약</a><a class="call" href="tel:0507-1495-4600">전화 예약</a></span>
   </nav>
 </header>
 
@@ -506,7 +515,7 @@
       <div><dt>주소</dt><dd>인천광역시 서구 가경주로 46, 2층 (가정동)<br>인천2호선 가정중앙시장역 인근<br><a href="https://m.blog.naver.com/PostView.naver?blogId=kimyiho8787&amp;logNo=224389441368" target="_blank" rel="noopener">영상으로 길 안내 보기 →</a></dd></div>
       <div><dt>주차</dt><dd>한의원 건물 바로 앞 1층 도원주차장</dd></div>
       <div><dt>전화</dt><dd><a href="tel:0507-1495-4600">0507-1495-4600</a></dd></div>
-      <div><dt>예약</dt><dd><a href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약 바로가기</a> 또는 전화 예약</dd></div>
+      <div><dt>예약</dt><dd><a href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">예약 바로가기</a> 또는 전화 예약</dd></div>
       <div><dt>문의</dt><dd><a href="https://pf.kakao.com/_YUqxjG/chat" target="_blank" rel="noopener">카카오톡 채널로 문의하기</a></dd></div>
     </dl>
     <p>진료시간은 사정에 따라 바뀔 수 있으니 방문 전 전화로 확인해 주세요.</p>
@@ -514,7 +523,7 @@
 
   <div class="cta">
     <a class="btn btn-primary" href="tel:0507-1495-4600">전화로 상담 예약 0507-1495-4600</a>
-    <a class="btn btn-primary" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버로 예약하기</a>
+    <a class="btn btn-primary" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">예약하기</a>
     <a class="btn btn-kakao" href="https://pf.kakao.com/_YUqxjG/chat" target="_blank" rel="noopener">카카오톡 문의</a>
     <a class="btn btn-ghost" href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">네이버 지도 길찾기</a>
     <a class="btn btn-ghost" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">공식 블로그 바로가기</a>
@@ -544,9 +553,16 @@
   <p class="notice">※ 이 글은 일반적인 건강 정보이며, 개인의 상태에 따라 치료 방법과 결과는 다를 수 있습니다. 정확한 진단과 치료는 진료를 통해 결정됩니다. 침·약침 시술 후 드물게 멍, 통증 등이 생길 수 있습니다.</p>
 </article>
 
+<nav class="quick" aria-label="빠른 상담">
+  <a class="q-kakao" href="https://pf.kakao.com/_YUqxjG/chat" target="_blank" rel="noopener">카톡 문의</a>
+  <a class="q-book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">예약</a>
+  <a class="q-tel" href="tel:0507-1495-4600">전화 예약<small>0507-1495-4600</small></a>
+  <a href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">길찾기</a>
+  <a class="q-top" href="#top">맨 위로 ↑</a>
+</nav>
 <nav class="mbar" aria-label="빠른 연결">
   <a class="m-call" href="tel:0507-1495-4600">전화</a>
-  <a class="m-book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약</a>
+  <a class="m-book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">예약</a>
   <a href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">길찾기</a>
   <a class="m-kakao" href="https://pf.kakao.com/_YUqxjG/chat" target="_blank" rel="noopener">카톡 문의</a>
 </nav>
