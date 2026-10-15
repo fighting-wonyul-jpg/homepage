@@ -12,3 +12,5 @@ GitHub Pages로 배포되는 정적 칼럼 사이트입니다: https://fighting-
 - `sw.js` : 예전에 앱으로 설치한 휴대폰의 캐시를 정리하고 스스로 해제하는 파일 (지우지 마세요)
 
 `main` 브랜치에 push하면 GitHub Pages가 자동으로 반영합니다.
+- `CLAUDE.md` : 칼럼 작성 규칙(원장님 확인 사항), 새 칼럼 만드는 순서, 병원 정보
+- `tools/` : 칼럼 셸 생성·본문 빌더·목록 재생성·점검 스크립트 (`python3 tools/check.py`로 전체 점검)
