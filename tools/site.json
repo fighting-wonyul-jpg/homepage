@@ -241,11 +241,7 @@
  ],
  "popular": [
   "traffic-accident",
-  "lumbar-disc",
-  "obesity",
-  "child-growth",
-  "infertility",
-  "menopause"
+  "lumbar-disc"
  ],
  "labels": {
   "neck-disc": "목디스크·거북목",
@@ -464,5 +460,32 @@
   "child-obesity": [
    "다이어트"
   ]
- }
+ },
+ "seasonal": {
+  "spring": [
+   "allergic-rhinitis",
+   "child-rhinitis",
+   "dry-eye",
+   "chronic-fatigue"
+  ],
+  "summer": [
+   "heat-exhaustion",
+   "aircon-sickness",
+   "hyperhidrosis",
+   "child-sweating"
+  ],
+  "autumn": [
+   "allergic-rhinitis",
+   "student-fatigue",
+   "exam-anxiety",
+   "child-immunity"
+  ],
+  "winter": [
+   "cold-hands-feet",
+   "dry-itchy-skin",
+   "child-immunity",
+   "chronic-cough"
+  ]
+ },
+ "_note": "popular=항상 보이는 칼럼, seasonal=계절별(봄 3~5월, 여름 6~8월, 가을 9~11월, 겨울 12~2월)로 site.js가 자동으로 바꿔 보여 줌"
 }
