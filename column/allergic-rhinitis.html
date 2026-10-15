@@ -270,9 +270,10 @@
   .mbar { display: none; }
   @media (max-width: 760px) {
     body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
-    .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); gap: 8px; box-shadow: 0 -2px 10px rgba(0,0,0,.08); }
-    .mbar a { flex: 1; text-align: center; padding: 10px 4px; border-radius: 10px; font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--brand); color: var(--brand); }
-    .mbar a.m-call { background: var(--brand); color: var(--on-brand); }
+    .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); gap: 6px; box-shadow: 0 -2px 10px rgba(0,0,0,.08); }
+    .mbar a { flex: 1; text-align: center; padding: 10px 2px; border-radius: 10px; font-weight: 700; font-size: .88rem; white-space: nowrap; text-decoration: none; border: 1.5px solid var(--brand); color: var(--brand); }
+    .mbar a.m-call, .mbar a.m-book { background: var(--brand); color: var(--on-brand); }
+    .mbar a.m-book { flex: 1.4; }
   }
   .visit { margin-top: 32px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-soft); }
   .visit h2 { margin: 0 0 10px; font-size: 1.15rem; }
@@ -288,6 +289,9 @@
   .author .who small { display: block; font-weight: 600; color: var(--muted); font-size: .85rem; }
   .author .bio { margin-top: 4px; font-size: .95rem; }
   .author a { display: inline-block; margin-top: 6px; font-weight: 700; }
+  .nav-r { display: flex; align-items: center; gap: 8px; }
+  .book { display: none; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--brand); color: var(--brand); text-decoration: none; font-size: .9rem; font-weight: 700; }
+  @media (min-width: 640px) { .book { display: inline-block; } }
 </style>
 </head>
 <body>
@@ -295,7 +299,7 @@
 <header>
   <nav class="nav">
     <a class="logo" href="./" aria-label="365스마일한의원 건강 칼럼 홈"><img class="logo-mark" src="../images/logo-mark.png" alt="" width="34" height="36"><img class="word-light" src="../images/logo-word.png" alt="365스마일한의원" width="226" height="28"><img class="word-dark" src="../images/logo-word-dark.png" alt="" width="226" height="28"></a>
-    <a class="call" href="tel:0507-1495-4600">전화 예약</a>
+    <span class="nav-r"><a class="book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약</a><a class="call" href="tel:0507-1495-4600">전화 예약</a></span>
   </nav>
 </header>
 
@@ -481,12 +485,14 @@
       <div><dt>주소</dt><dd>인천광역시 서구 가경주로 46, 2층 (가정동)<br>인천2호선 가정중앙시장역 인근<br><a href="https://m.blog.naver.com/PostView.naver?blogId=kimyiho8787&amp;logNo=224389441368" target="_blank" rel="noopener">영상으로 길 안내 보기 →</a></dd></div>
       <div><dt>주차</dt><dd>한의원 건물 바로 앞 1층 도원주차장</dd></div>
       <div><dt>전화</dt><dd><a href="tel:0507-1495-4600">0507-1495-4600</a></dd></div>
+      <div><dt>예약</dt><dd><a href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약 바로가기</a> 또는 전화 예약</dd></div>
     </dl>
     <p>진료시간은 사정에 따라 바뀔 수 있으니 방문 전 전화로 확인해 주세요.</p>
   </section>
 
   <div class="cta">
     <a class="btn btn-primary" href="tel:0507-1495-4600">전화로 상담 예약 0507-1495-4600</a>
+    <a class="btn btn-primary" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버로 예약하기</a>
     <a class="btn btn-ghost" href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">네이버 지도 길찾기</a>
     <a class="btn btn-ghost" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">공식 블로그 바로가기</a>
   </div>
@@ -517,9 +523,10 @@
 </article>
 
 <nav class="mbar" aria-label="빠른 연결">
-  <a class="m-call" href="tel:0507-1495-4600">전화 예약</a>
-  <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a>
+  <a class="m-call" href="tel:0507-1495-4600">전화</a>
+  <a class="m-book" href="https://m.booking.naver.com/booking/13/bizes/208486?theme=place&amp;lang=ko&amp;area=ple" target="_blank" rel="noopener">네이버 예약</a>
   <a href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">길찾기</a>
+  <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a>
 </nav>
 
 </body>
