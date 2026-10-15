@@ -16,7 +16,10 @@
     "ganglion",
     "thoracic-back-pain",
     "intercostal-neuralgia",
-    "neck-tension"
+    "neck-tension",
+    "rotator-cuff-tear",
+    "whiplash",
+    "finger-arthritis"
    ]
   ],
   [
@@ -41,7 +44,11 @@
     "fibromyalgia",
     "traffic-accident",
     "rheumatoid",
-    "gout"
+    "gout",
+    "spondylolisthesis",
+    "meniscus-tear",
+    "pes-anserine",
+    "piriformis"
    ]
   ],
   [
@@ -62,7 +69,8 @@
     "forgetfulness",
     "dementia-prevention",
     "parkinsons",
-    "stroke-sequelae"
+    "stroke-sequelae",
+    "accident-headache"
    ]
   ],
   [
@@ -83,7 +91,8 @@
     "arrhythmia",
     "bradycardia",
     "tachycardia",
-    "chest-pain"
+    "chest-pain",
+    "accident-insomnia"
    ]
   ],
   [
@@ -179,7 +188,9 @@
     "postpartum",
     "postpartum-depression",
     "postpartum-weight",
-    "menopause"
+    "menopause",
+    "menopause-diet",
+    "adenomyosis"
    ]
   ],
   [
@@ -215,7 +226,9 @@
     "night-terrors",
     "tic-disorder",
     "adhd",
-    "student-fatigue"
+    "student-fatigue",
+    "child-atopic",
+    "child-snoring"
    ]
   ],
   [
@@ -235,7 +248,12 @@
     "low-immunity",
     "aircon-sickness",
     "heat-exhaustion",
-    "cancer-recovery"
+    "cancer-recovery",
+    "hyperthyroidism",
+    "edema",
+    "tonic-herbs",
+    "spring-fatigue",
+    "seasonal-cold"
    ]
   ]
  ],
@@ -421,7 +439,25 @@
   "low-immunity": "면역력 저하",
   "aircon-sickness": "냉방병",
   "heat-exhaustion": "더위 먹음",
-  "cancer-recovery": "암 치료 후 회복"
+  "cancer-recovery": "암 치료 후 회복",
+  "rotator-cuff-tear": "회전근개 파열",
+  "whiplash": "교통사고 목 통증(편타손상)",
+  "finger-arthritis": "손가락 관절염",
+  "spondylolisthesis": "척추전방전위증",
+  "meniscus-tear": "반월상연골 손상",
+  "pes-anserine": "거위발건염",
+  "piriformis": "이상근증후군",
+  "accident-headache": "교통사고 후 두통·어지럼",
+  "accident-insomnia": "교통사고 후 불면·불안",
+  "menopause-diet": "갱년기 다이어트",
+  "adenomyosis": "자궁선근증",
+  "child-atopic": "소아 아토피",
+  "child-snoring": "소아 코골이·아데노이드",
+  "hyperthyroidism": "갑상선기능항진증",
+  "edema": "부종",
+  "tonic-herbs": "보약·기력 저하",
+  "spring-fatigue": "춘곤증",
+  "seasonal-cold": "환절기 감기 몸살"
  },
  "synonyms": {
   "arrhythmia": [
@@ -459,14 +495,40 @@
   ],
   "child-obesity": [
    "다이어트"
+  ],
+  "whiplash": [
+   "교통사고",
+   "자보",
+   "목 염좌"
+  ],
+  "accident-headache": [
+   "교통사고",
+   "자보"
+  ],
+  "accident-insomnia": [
+   "교통사고",
+   "자보"
+  ],
+  "menopause-diet": [
+   "다이어트",
+   "살",
+   "뱃살"
+  ],
+  "tonic-herbs": [
+   "보약",
+   "기력"
+  ],
+  "seasonal-cold": [
+   "감기",
+   "몸살"
   ]
  },
  "seasonal": {
   "spring": [
    "allergic-rhinitis",
+   "spring-fatigue",
    "child-rhinitis",
-   "dry-eye",
-   "chronic-fatigue"
+   "dry-eye"
   ],
   "summer": [
    "heat-exhaustion",
@@ -476,15 +538,15 @@
   ],
   "autumn": [
    "allergic-rhinitis",
+   "seasonal-cold",
    "student-fatigue",
-   "exam-anxiety",
-   "child-immunity"
+   "exam-anxiety"
   ],
   "winter": [
    "cold-hands-feet",
-   "dry-itchy-skin",
+   "seasonal-cold",
    "child-immunity",
-   "chronic-cough"
+   "dry-itchy-skin"
   ]
  },
  "_note": "popular=항상 보이는 칼럼, seasonal=계절별(봄 3~5월, 여름 6~8월, 가을 9~11월, 겨울 12~2월)로 site.js가 자동으로 바꿔 보여 줌"
