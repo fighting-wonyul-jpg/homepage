@@ -229,6 +229,16 @@
   .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; }
   .btn-primary { background: var(--brand); color: #fff; }
   .btn-ghost { border: 1.5px solid var(--brand); color: var(--brand); }
+  .blogbox { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 26px 0; padding: 16px 18px; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--line); }
+  .blogbox p { flex: 1 1 220px; margin: 0; font-size: .95rem; }
+  .blogbox a { flex: none; padding: 9px 16px; border-radius: 10px; background: var(--brand); color: #fff; font-weight: 700; text-decoration: none; }
+  .mbar { display: none; }
+  @media (max-width: 760px) {
+    body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+    .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); gap: 8px; box-shadow: 0 -2px 10px rgba(0,0,0,.08); }
+    .mbar a { flex: 1; text-align: center; padding: 10px 4px; border-radius: 10px; font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--brand); color: var(--brand); }
+    .mbar a.m-call { background: var(--brand); color: #fff; }
+  }
 </style>
 </head>
 <body>
@@ -369,6 +379,11 @@
 <p>한방 비만 처방에 흔히 쓰이는 <b>마황(麻黃)</b>에는 에페드린 성분이 들어 있어 식욕을 줄이고 에너지 소비를 늘리는 작용이 있지만, 교감신경을 자극하기 때문에 가슴 두근거림, 불면, 혈압 상승, 손 떨림, 입 마름, 소변 보기 어려움 같은 부작용이 생길 수 있습니다. 미국에서는 에페드라 성분 건강보조식품과 관련된 심혈관·신경계 이상 반응 보고가 쌓여 2004년 식품의약국(FDA)이 해당 보조식품 판매를 금지하기도 했습니다.</p>
 <p>그래서 심장 질환, 부정맥, 고혈압, 갑상선기능항진증, 녹내장, 전립선비대증이 있거나 임신·수유 중인 분에게는 마황 처방을 쓰지 않거나 매우 신중히 판단합니다. 다른 식욕억제제와 함께 복용하지 말고, 복용 중 두근거림, 잠을 못 이룸, 두통이 생기면 바로 연락해 주세요. 마황 없이도 유형에 맞는 처방이 가능하며, 한약은 감량 수치를 약속하는 수단이 아니라 식사 조절을 버티게 돕는 도구로 생각하시는 것이 좋습니다.</p>
 
+<div class="blogbox">
+  <p>원장님이 네이버 블로그에 진료 이야기와 건강 정보를 꾸준히 올리고 있습니다. 더 많은 이야기는 블로그에서 확인해 보세요.</p>
+  <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>
+</div>
+
 <h2 id="road">치료는 어떤 순서로 진행되나요?</h2>
 <ol class="road">
   <li><b>건강 상태 확인</b> 다른 원인 질환과 복용 약, 마황 사용 가능 여부를 확인합니다.</li>
@@ -446,6 +461,12 @@
 
   <p class="notice">※ 이 글은 일반적인 건강 정보이며, 개인의 상태에 따라 치료 방법과 결과는 다를 수 있습니다. 정확한 진단과 치료는 진료를 통해 결정됩니다. 침·약침 시술 후 드물게 멍, 통증 등이 생길 수 있습니다.</p>
 </article>
+
+<nav class="mbar" aria-label="빠른 연결">
+  <a class="m-call" href="tel:0507-1495-4600">전화 예약</a>
+  <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a>
+  <a href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">길찾기</a>
+</nav>
 
 </body>
 </html>
