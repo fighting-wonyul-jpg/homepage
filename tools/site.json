@@ -18,7 +18,8 @@
     "intercostal-neuralgia",
     "neck-tension",
     "rotator-cuff-tear",
-    "finger-arthritis"
+    "finger-arthritis",
+    "thoracic-outlet"
    ]
   ],
   [
@@ -33,7 +34,8 @@
     "scoliosis",
     "coccyx-pain",
     "si-joint-pain",
-    "hip-pain"
+    "hip-pain",
+    "ankylosing-spondylitis"
    ]
   ],
   [
@@ -51,7 +53,9 @@
     "rheumatoid",
     "gout",
     "meniscus-tear",
-    "pes-anserine"
+    "pes-anserine",
+    "ankle-instability",
+    "baker-cyst"
    ]
   ],
   [
@@ -135,7 +139,8 @@
     "motion-sickness",
     "tinnitus",
     "sudden-hearing-loss",
-    "eustachian"
+    "eustachian",
+    "vestibular-neuritis"
    ]
   ],
   [
@@ -152,7 +157,8 @@
     "eye-strain",
     "tonsillitis",
     "dry-mouth",
-    "mouth-ulcer"
+    "mouth-ulcer",
+    "lpr"
    ]
   ],
   [
@@ -173,7 +179,8 @@
     "folliculitis",
     "cheilitis",
     "sun-allergy",
-    "molluscum"
+    "molluscum",
+    "dermatographism"
    ]
   ],
   [
@@ -193,7 +200,8 @@
     "cystitis",
     "menopause",
     "menopause-diet",
-    "adenomyosis"
+    "adenomyosis",
+    "menstrual-migraine"
    ]
   ],
   [
@@ -205,7 +213,11 @@
     "pregnancy-edema",
     "postpartum",
     "postpartum-depression",
-    "postpartum-weight"
+    "postpartum-weight",
+    "pregnancy-back-pain",
+    "postpartum-joint-pain",
+    "preconception",
+    "postpartum-hair-loss"
    ]
   ],
   [
@@ -216,7 +228,8 @@
     "bph",
     "erectile-dysfunction",
     "male-infertility",
-    "overactive-bladder"
+    "overactive-bladder",
+    "nocturia"
    ]
   ],
   [
@@ -243,7 +256,8 @@
     "adhd",
     "student-fatigue",
     "child-atopic",
-    "child-snoring"
+    "child-snoring",
+    "child-tonic"
    ]
   ],
   [
@@ -268,7 +282,8 @@
     "edema",
     "tonic-herbs",
     "spring-fatigue",
-    "seasonal-cold"
+    "seasonal-cold",
+    "underweight"
    ]
   ]
  ],
@@ -472,7 +487,22 @@
   "edema": "부종",
   "tonic-herbs": "보약·기력 저하",
   "spring-fatigue": "춘곤증",
-  "seasonal-cold": "환절기 감기 몸살"
+  "seasonal-cold": "환절기 감기 몸살",
+  "thoracic-outlet": "흉곽출구증후군",
+  "ankylosing-spondylitis": "강직성척추염",
+  "ankle-instability": "발목 불안정증",
+  "baker-cyst": "베이커낭종(오금 물혹)",
+  "vestibular-neuritis": "전정신경염",
+  "lpr": "인후두역류",
+  "dermatographism": "피부묘기증",
+  "menstrual-migraine": "생리 편두통",
+  "pregnancy-back-pain": "임신 중 허리통증",
+  "postpartum-joint-pain": "산후 관절통(산후풍)",
+  "preconception": "임신 준비",
+  "postpartum-hair-loss": "출산 후 탈모",
+  "nocturia": "야간뇨",
+  "child-tonic": "아이 보약",
+  "underweight": "저체중·살이 안 찜"
  },
  "synonyms": {
   "arrhythmia": [
@@ -536,6 +566,39 @@
   "seasonal-cold": [
    "감기",
    "몸살"
+  ],
+  "underweight": [
+   "살찌는",
+   "마른",
+   "체중 증가"
+  ],
+  "child-tonic": [
+   "보약",
+   "녹용",
+   "어린이 한약"
+  ],
+  "nocturia": [
+   "밤에 소변",
+   "소변 자주"
+  ],
+  "postpartum-joint-pain": [
+   "산후풍",
+   "손목"
+  ],
+  "lpr": [
+   "목 이물감",
+   "헛기침"
+  ],
+  "dermatographism": [
+   "긁으면 부어오름"
+  ],
+  "vestibular-neuritis": [
+   "어지럼증",
+   "구토"
+  ],
+  "preconception": [
+   "임신 준비",
+   "엽산"
   ]
  },
  "seasonal": {
