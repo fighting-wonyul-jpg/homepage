@@ -46,12 +46,12 @@
         "name": "365스마일한의원"
       },
       "mainEntityOfPage": "https://fighting-wonyul-jpg.github.io/homepage/column/vaginitis.html",
-      "dateModified": "2026-10-14"
+      "dateModified": "2026-10-15"
     },
     {
       "@type": "MedicalClinic",
       "name": "365스마일한의원",
-      "url": "https://fighting-wonyul-jpg.github.io/homepage/",
+      "url": "https://fighting-wonyul-jpg.github.io/homepage/column/",
       "telephone": "0507-1495-4600",
       "address": {
         "@type": "PostalAddress",
@@ -62,6 +62,30 @@
       "medicalSpecialty": "한방부인과",
       "sameAs": [
         "https://m.blog.naver.com/kimyiho8787"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday",
+            "PublicHolidays"
+          ],
+          "opens": "09:00",
+          "closes": "15:00"
+        }
       ]
     },
     {
@@ -104,7 +128,7 @@
           "name": "임신 중인데 한약을 먹어도 되나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "산부인과 치료가 우선이며, 한약은 산부인과와 상의해 안전성이 확인된 경우에만 고려합니다."
+            "text": "질염 자체는 산부인과 처방을 우선 따르세요. 한약은 임신 중임을 알려 주시면 확인 후 안전한 약재로 처방합니다."
           }
         },
         {
@@ -239,6 +263,13 @@
     .mbar a { flex: 1; text-align: center; padding: 10px 4px; border-radius: 10px; font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--brand); color: var(--brand); }
     .mbar a.m-call { background: var(--brand); color: #fff; }
   }
+  .visit { margin-top: 32px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-soft); }
+  .visit h2 { margin: 0 0 10px; font-size: 1.15rem; }
+  .visit dl { margin: 0; display: grid; gap: 8px; }
+  .visit dl div { display: grid; grid-template-columns: 76px 1fr; gap: 10px; }
+  .visit dt { font-weight: 700; color: var(--brand); }
+  .visit dd { margin: 0; }
+  .visit p { margin: 10px 0 0; font-size: .85rem; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -376,7 +407,7 @@
 <h3>2. 약침</h3>
 <p>허리와 엉치, 아랫배 주변의 관련 경혈에 소량의 약침을 적용해 골반 주변의 차가움과 긴장을 덜어 줍니다. 외음부나 질 주변에는 시술하지 않습니다.</p>
 <h3>3. 한약</h3>
-<p>유형에 따라 습을 말리거나 열을 내리거나 바탕을 보충하는 처방을 씁니다. 항진균제나 항생제를 복용하는 중이라면 처방전을 보여 주시고, 임신을 준비하거나 임신 중이라면 산부인과와 상의한 뒤 안전성이 확인된 약재만 사용합니다.</p>
+<p>유형에 따라 습을 말리거나 열을 내리거나 바탕을 보충하는 처방을 씁니다. 항진균제나 항생제를 복용하는 중이라면 처방전을 보여 주시고, 임신을 준비하거나 임신 중이라면 진료 때 꼭 알려 주세요. 확인 후 안전한 약재로 처방합니다.</p>
 
 <div class="blogbox">
   <p>원장님이 네이버 블로그에 진료 이야기와 건강 정보를 꾸준히 올리고 있습니다. 더 많은 이야기는 블로그에서 확인해 보세요.</p>
@@ -420,7 +451,7 @@
     <dt>Q4. 생리 전마다 질염이 생겨요.</dt>
     <dd>호르몬 변화와 피로가 겹치는 시기라 재발이 잦습니다. 이 시기의 관리를 함께 계획합니다.</dd>
     <dt>Q5. 임신 중인데 한약을 먹어도 되나요?</dt>
-    <dd>산부인과 치료가 우선이며, 한약은 산부인과와 상의해 안전성이 확인된 경우에만 고려합니다.</dd>
+    <dd>질염 자체는 산부인과 처방을 우선 따르세요. 한약은 임신 중임을 알려 주시면 확인 후 안전한 약재로 처방합니다.</dd>
     <dt>Q6. 유산균을 먹으면 도움이 되나요?</dt>
     <dd>도움이 된다는 연구도 있지만 결과가 일정하지 않아, 치료약을 대신하지는 못합니다.</dd>
     <dt>Q7. 침을 맞으면 질염이 낫나요?</dt>
@@ -428,6 +459,17 @@
     <dt>Q8. 치료는 얼마나 받아야 하나요?</dt>
     <dd>보통 4~8주 동안 생리 주기에 따른 변화를 보며 정합니다.</dd>
   </dl>
+
+  <section class="visit">
+    <h2>진료 안내</h2>
+    <dl>
+      <div><dt>진료시간</dt><dd>평일 09:00~20:00 (점심시간 13:00~14:00)<br>토·일·공휴일 09:00~15:00</dd></div>
+      <div><dt>주소</dt><dd>인천광역시 서구 가경주로 46, 2층 (가정동)<br>인천2호선 가정중앙시장역 인근</dd></div>
+      <div><dt>주차</dt><dd>한의원 건물 바로 앞 1층 도원주차장</dd></div>
+      <div><dt>전화</dt><dd><a href="tel:0507-1495-4600">0507-1495-4600</a></dd></div>
+    </dl>
+    <p>진료시간은 사정에 따라 바뀔 수 있으니 방문 전 전화로 확인해 주세요.</p>
+  </section>
 
   <div class="cta">
     <a class="btn btn-primary" href="tel:0507-1495-4600">전화로 상담 예약 0507-1495-4600</a>

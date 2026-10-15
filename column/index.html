@@ -26,7 +26,38 @@
   "publisher": {
     "@type": "MedicalClinic",
     "name": "365스마일한의원",
-    "telephone": "0507-1495-4600"
+    "telephone": "0507-1495-4600",
+    "url": "https://fighting-wonyul-jpg.github.io/homepage/column/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "가경주로 46, 2층",
+      "addressLocality": "인천광역시 서구",
+      "addressCountry": "KR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday",
+          "Sunday",
+          "PublicHolidays"
+        ],
+        "opens": "09:00",
+        "closes": "15:00"
+      }
+    ]
   },
   "mainEntity": {
     "@type": "ItemList",
@@ -1187,6 +1218,13 @@
     .mbar a { flex: 1; text-align: center; padding: 10px 4px; border-radius: 10px; font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--brand); color: var(--brand); }
     .mbar a.m-call { background: var(--brand); color: #fff; }
   }
+  .visit { margin-top: 32px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-soft); }
+  .visit h2 { margin: 0 0 10px; font-size: 1.15rem; }
+  .visit dl { margin: 0; display: grid; gap: 8px; }
+  .visit dl div { display: grid; grid-template-columns: 76px 1fr; gap: 10px; }
+  .visit dt { font-weight: 700; color: var(--brand); }
+  .visit dd { margin: 0; }
+  .visit p { margin: 10px 0 0; font-size: .85rem; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -1466,6 +1504,17 @@
   window.addEventListener('hashchange', fromHash); fromHash();
 })();
 </script>
+  <section class="visit">
+    <h2>진료 안내</h2>
+    <dl>
+      <div><dt>진료시간</dt><dd>평일 09:00~20:00 (점심시간 13:00~14:00)<br>토·일·공휴일 09:00~15:00</dd></div>
+      <div><dt>주소</dt><dd>인천광역시 서구 가경주로 46, 2층 (가정동)<br>인천2호선 가정중앙시장역 인근</dd></div>
+      <div><dt>주차</dt><dd>한의원 건물 바로 앞 1층 도원주차장</dd></div>
+      <div><dt>전화</dt><dd><a href="tel:0507-1495-4600">0507-1495-4600</a></dd></div>
+    </dl>
+    <p>진료시간은 사정에 따라 바뀔 수 있으니 방문 전 전화로 확인해 주세요.</p>
+  </section>
+
   <div class="cta">
     <a class="btn btn-primary" href="tel:0507-1495-4600">전화로 상담 예약 0507-1495-4600</a>
     <a class="btn btn-ghost" href="https://map.naver.com/p/search/365%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%95%9C%EC%9D%98%EC%9B%90/place/34838451" target="_blank" rel="noopener">네이버 지도 길찾기</a>
