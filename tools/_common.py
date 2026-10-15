@@ -4,7 +4,7 @@ ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COL=os.path.join(ROOT,'column')+os.sep
 BASE='https://fighting-wonyul-jpg.github.io/homepage/'
 TODAY=datetime.date.today().isoformat()
-NON_COLUMN={'index','doctor'}
+NON_COLUMN={'index','doctor','privacy'}
 def site(): return json.load(open(os.path.join(ROOT,'tools','site.json'),encoding='utf-8'))
 def column_slugs(): return sorted(f[:-5] for f in os.listdir(COL) if f.endswith('.html') and f[:-5] not in NON_COLUMN)
 def read(slug): return open(COL+slug+'.html',encoding='utf-8').read()
