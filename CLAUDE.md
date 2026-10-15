@@ -72,6 +72,7 @@
 
 - 365스마일한의원, 인천광역시 서구 가경주로 46, 2층 (가정동), 인천2호선 가정중앙시장역 인근
 - 전화 0507-1495-4600
+- 네이버 예약: https://m.booking.naver.com/booking/13/bizes/208486?theme=place&lang=ko&area=ple (PC 헤더, 진료 안내 "예약" 줄, 하단 버튼, 휴대폰 하단 고정 버튼에 들어 있음. `tools/apply_booking.py`)
 - 진료시간: 평일 09:00~20:00 (점심 13:00~14:00), 토·일·공휴일 09:00~15:00
 - 주차: 한의원 건물 바로 앞 1층 도원주차장
 - 블로그 https://m.blog.naver.com/kimyiho8787, 유튜브 https://www.youtube.com/@365smilekmd
