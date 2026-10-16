@@ -10,15 +10,15 @@
 ## 구조
 
 - `column/<slug>.html`: 칼럼 한 편 = 파일 하나. 빌드 과정 없이 정적 HTML입니다.
-- `column/index.html`: 칼럼 목록(첫 화면). 검색창(전체 칼럼 검색), 많이 찾는 칼럼, **대분류 8개 카드**(통증·신경통 / 마음·수면·심장 / 소화기 / 체질·만성질환 / 눈·코·귀·목 / 피부 / 여성·임신·남성 / 소아)만 보이고, 카드를 누르면 분류 페이지로 이동합니다. `tools/build_index.py`로 다시 만듭니다.
-- `column/cat-*.html`: 대분류 페이지 8개(예: `cat-pain.html`). 소개 글 아래 "○○에서 찾기" 검색창(그 대분류 안에서 찾고, 없으면 전체 검색 `./?q=`로 연결)과 소분류 버튼(전체 + 해당 소분류)이 있고, 소분류 버튼을 누르면 같은 페이지에서 그 소분류 칼럼만 보입니다(`#c1`~`#c15`). 대분류 구성·소개 글은 `tools/site.json`의 `groups`, 소분류 소개 글은 `sub_intro`. `build_index.py`가 칼럼 목록을 틀로 만들고 사이트맵도 맞춥니다. 칼럼 위치 표시는 "건강 칼럼 · 소분류(대분류 페이지#c번호로 링크) · 칼럼", BreadcrumbList는 대분류 단계로 넣습니다. 예전 `#cat-숫자` 주소는 해당 대분류 페이지의 소분류로 넘어갑니다.
+- `column/index.html`: 칼럼 목록(첫 화면). 검색창(전체 칼럼 검색), 많이 찾는 칼럼, **대분류 9개 카드**(통증·신경통 / 다이어트 / 마음·수면·심장 / 소화기 / 기력·만성질환 / 눈·코·귀·목 / 피부 / 여성·임신·남성 / 소아)만 보이고, 카드를 누르면 분류 페이지로 이동합니다. `tools/build_index.py`로 다시 만듭니다.
+- `column/cat-*.html`: 대분류 페이지 9개(예: `cat-pain.html`). 소개 글 아래 "○○에서 찾기" 검색창(그 대분류 안에서 찾고, 없으면 전체 검색 `./?q=`로 연결)과 소분류 버튼(전체 + 해당 소분류)이 있고, 소분류 버튼을 누르면 같은 페이지에서 그 소분류 칼럼만 보입니다(`#c1`~`#c16`). 대분류 구성·소개 글은 `tools/site.json`의 `groups`, 소분류 소개 글은 `sub_intro`. `build_index.py`가 칼럼 목록을 틀로 만들고 사이트맵도 맞춥니다. 칼럼 위치 표시는 "건강 칼럼 · 소분류(대분류 페이지#c번호로 링크) · 칼럼", BreadcrumbList는 대분류 단계로 넣습니다. 예전 `#cat-숫자` 주소는 해당 대분류 페이지의 소분류로 넘어갑니다.
 - `column/doctor.html`: 원장 소개 (유튜브 영상 삽입, 블로그 링크).
 - `column/privacy.html`: 개인정보 처리 안내 (`tools/make_privacy.py`). 모든 페이지 맨 아래 링크.
 - `column/site.js`: 체크리스트 눌러 체크(3개 이상이면 네이버 예약·카톡 문의·전화 안내), "가족에게 보내기"(휴대폰 공유창·링크 복사, 칼럼마다 글쓴이 소개 앞 `.share`), 칼럼 목록의 계절별 "요즘 많이 찾는 칼럼"(`tools/site.json`의 popular=항상, seasonal=봄·여름·가을·겨울). `tools/apply_extras.py`.
 - `column/ga.js`: 구글 애널리틱스(G-650CYRNZYH)와 클릭 기록. 이벤트: click_booking, click_kakao, click_call, click_map, click_blog, click_youtube (link_location: mobile_bar, pc_quick, header, visit_info, bottom_buttons, blog_box, author_box), search(search_term), checklist_result(checked), share(method). 모든 페이지 `<head>`에 들어감. 네이버 애널리틱스(wa 1ce89e414942390)는 `</body>` 바로 앞 (둘 다 `tools/apply_analytics.py`).
 - `images/col-<slug>.jpg`: 칼럼 표지 (1600x900). `images/logo-*.png`: 로고.
 - `sitemap.xml`: 칼럼 목록, 원장 소개, 칼럼 전체. `robots.txt`가 사이트맵 위치를 알려 줍니다.
-- `tools/site.json`: 소분류 15개(categories), 대분류 7개(groups), 많이 찾는 칼럼, 칼럼별 짧은 이름(labels), 검색 동의어. **분류를 바꾸면 여기를 고치고 build_index.py 실행.**
+- `tools/site.json`: 소분류 16개(categories), 대분류 9개(groups), 많이 찾는 칼럼, 칼럼별 짧은 이름(labels), 검색 동의어. **분류를 바꾸면 여기를 고치고 build_index.py 실행.**
 - 루트 `index.html`, `install.html`: 예전 홈페이지와 앱 설치 주소(QR 포함)를 칼럼 목록으로 넘기는 이동 페이지입니다. 지우지 마세요.
 - `sw.js`: 예전에 앱으로 설치한 휴대폰의 캐시를 지우는 정리용입니다. 지우지 마세요.
 - `google465fb42647d81226.html`, `naver9d276fdbd37d1b84cc74531be623fba7.html`(예전 주소), `naver241c4a714850bff6878bfed1f74169e6.html`(새 주소): 구글, 네이버 소유 확인 파일입니다. 지우지 마세요.

@@ -18,7 +18,7 @@ def card(x):
     h1,img,ks=page(x); ks=ks+SYN.get(x,[])
     return f'      <a class="item" href="{x}.html" data-k="{html.escape(" ".join(ks),quote=True)}"><img src="../images/{img}" alt="" loading="lazy"><span><small>{html.escape(LABEL[x])}</small>{h1}</span></a>'
 # 예전 칼럼 목록의 #cat-숫자 순서 (바깥에 남은 옛 링크를 새 페이지로 넘기는 데 씀. 바꾸지 말 것)
-LEGACY=['목·어깨·팔 통증','허리·골반 통증','무릎·발·관절','교통사고 후유증','두통·얼굴·신경','마음·수면·심장','소화기','어지럼·귀','코·목·눈·입','피부','여성 건강','임신·출산','남성·비뇨기','소아','체질·만성질환']
+LEGACY=['목·어깨·팔 통증','허리·골반 통증','무릎·발·관절','교통사고 후유증','두통·얼굴·신경','마음·수면·심장','소화기','어지럼·귀','코·목·눈·입','피부','여성 건강','임신·출산','남성·비뇨기','소아','기력·만성질환']
 G=S['groups']; CATD=dict(CAT); SUBI=S['sub_intro']
 CI={n:i for i,(n,_) in enumerate(CAT,1)}          # 소분류 번호: 분류 페이지 안의 #c1~#c15
 GOF={n:g for g in G for n in g[3]}                # 소분류 → 대분류
