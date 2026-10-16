@@ -383,6 +383,7 @@
   .sub h2 { margin: 0 0 6px; }
   .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .qon .sub-intro, .qon .lead-p { display: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-650CYRNZYH"></script>
 <script src="ga.js" defer></script>
@@ -400,6 +401,11 @@
   <h1>피부 칼럼 <small style="font-size:.55em;color:var(--muted)">20편</small></h1>
   <p class="lead-p">아토피, 습진, 두드러기, 건선, 백반증, 여드름, 탈모 등 피부 질환을 정리했습니다. 피부를 몸속 상태가 드러나는 곳으로 보고 체질 맞춤 한약과 침으로 치료하며, 오래된 피부염은 2~3개월 이상 단계를 나눠 관리합니다. 피부과 치료를 받고 계셔도 함께 진료받으실 수 있습니다.</p>
   <a class="back" href="./">← 전체 분류 보기</a>
+  <div class="search">
+    <label for="q">피부에서 찾기</label>
+    <input id="q" type="search" placeholder="예: 아토피피부염, 습진, 한포진" autocomplete="off">
+    <p class="search-msg" id="qmsg" aria-live="polite"></p>
+  </div>
   <div class="grid2">
       <a class="item" href="atopic-dermatitis.html" data-k="아토피피부염 아토피 소아 아토피 성인 아토피 가려움 한방피부과"><img src="../images/col-atopic.jpg" alt="" loading="lazy"><span><small>아토피피부염</small>밤마다 긁느라 잠 못 드는 피부, 아토피피부염 한방 관리</span></a>
       <a class="item" href="eczema.html" data-k="습진 주부습진 손습진 아토피 가려움"><img src="../images/col-eczema.jpg" alt="" loading="lazy"><span><small>습진</small>긁고 나면 더 가려운 피부, 습진의 악순환을 끊는 한방 관리</span></a>
@@ -433,6 +439,29 @@
     <li><a href="cat-women.html">여성·임신·남성</a></li>
     <li><a href="cat-children.html">소아</a></li>
   </ul>
+<script>
+(function(){
+  var q=document.getElementById('q'), msg=document.getElementById('qmsg');
+  var items=document.querySelectorAll('.grid2 .item'), secs=document.querySelectorAll('.sub'), chips=document.querySelector('.sub-chips');
+  function norm(t){ return (t||'').toLowerCase().replace(/[\s·()（）,.]/g,''); }
+  items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
+  q.addEventListener('input', function(){
+    var t=norm(q.value);
+    document.body.classList.toggle('qon', !!t);
+    if(!t){
+      items.forEach(function(a){ a.hidden=false; }); msg.textContent='';
+      if(chips){ chips.style.display=''; window.dispatchEvent(new Event('hashchange')); }
+      return;
+    }
+    if(chips) chips.style.display='none';
+    var n=0;
+    items.forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) n++; });
+    secs.forEach(function(s){ s.hidden = !s.querySelector('.item:not([hidden])'); });
+    if(n){ msg.textContent='검색 결과 '+n+'편'; }
+    else { msg.innerHTML='이 분류에는 찾는 칼럼이 없습니다. <a href="./?q='+encodeURIComponent(q.value)+'">전체 칼럼에서 찾기 →</a>'; }
+  });
+})();
+</script>
   <div class="blogbox">
     <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
     <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>

@@ -359,6 +359,7 @@
   .sub h2 { margin: 0 0 6px; }
   .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .qon .sub-intro, .qon .lead-p { display: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-650CYRNZYH"></script>
 <script src="ga.js" defer></script>
@@ -376,6 +377,11 @@
   <h1>마음·수면·심장 칼럼 <small style="font-size:.55em;color:var(--muted)">16편</small></h1>
   <p class="lead-p">불면, 불안, 공황, 우울, 화병과 두근거림·가슴 통증을 다룬 칼럼입니다. 자율신경 검사로 몸 상태를 살피고, 증상이 가벼운 경우 한약 치료를 중심으로 관리하기도 합니다. 증상이 깊으면 정신건강의학과 치료를 함께 받으시고, 처음 생긴 가슴 통증은 병원 검사가 먼저입니다.</p>
   <a class="back" href="./">← 전체 분류 보기</a>
+  <div class="search">
+    <label for="q">마음·수면·심장에서 찾기</label>
+    <input id="q" type="search" placeholder="예: 불면증, 불안장애, 공황장애" autocomplete="off">
+    <p class="search-msg" id="qmsg" aria-live="polite"></p>
+  </div>
   <div class="grid2">
       <a class="item" href="insomnia.html" data-k="불면증 수면장애 잠이 안 올 때 새벽에 깸"><img src="../images/col-insomnia.jpg" alt="" loading="lazy"><span><small>불면증</small>누워도 정신이 또렷해지는 밤, 불면증 한방 치료와 수면 습관</span></a>
       <a class="item" href="anxiety-disorder.html" data-k="불안장애 범불안장애 불안 한방치료 한방신경정신과"><img src="../images/col-anxiety-disorder.jpg" alt="" loading="lazy"><span><small>불안장애</small>걱정이 꼬리를 물고 멈추지 않을 때, 불안장애 한방 진료 안내</span></a>
@@ -405,6 +411,29 @@
     <li><a href="cat-women.html">여성·임신·남성</a></li>
     <li><a href="cat-children.html">소아</a></li>
   </ul>
+<script>
+(function(){
+  var q=document.getElementById('q'), msg=document.getElementById('qmsg');
+  var items=document.querySelectorAll('.grid2 .item'), secs=document.querySelectorAll('.sub'), chips=document.querySelector('.sub-chips');
+  function norm(t){ return (t||'').toLowerCase().replace(/[\s·()（）,.]/g,''); }
+  items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
+  q.addEventListener('input', function(){
+    var t=norm(q.value);
+    document.body.classList.toggle('qon', !!t);
+    if(!t){
+      items.forEach(function(a){ a.hidden=false; }); msg.textContent='';
+      if(chips){ chips.style.display=''; window.dispatchEvent(new Event('hashchange')); }
+      return;
+    }
+    if(chips) chips.style.display='none';
+    var n=0;
+    items.forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) n++; });
+    secs.forEach(function(s){ s.hidden = !s.querySelector('.item:not([hidden])'); });
+    if(n){ msg.textContent='검색 결과 '+n+'편'; }
+    else { msg.innerHTML='이 분류에는 찾는 칼럼이 없습니다. <a href="./?q='+encodeURIComponent(q.value)+'">전체 칼럼에서 찾기 →</a>'; }
+  });
+})();
+</script>
   <div class="blogbox">
     <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
     <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>
