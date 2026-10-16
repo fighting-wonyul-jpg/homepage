@@ -2,7 +2,7 @@
 
 인천광역시 서구 가경주로 46, 2층 (가정동) · 대표원장 문원열
 
-GitHub Pages로 배포되는 정적 칼럼 사이트입니다: https://fighting-wonyul-jpg.github.io/homepage/column/
+GitHub Pages로 배포되는 정적 칼럼 사이트입니다: https://column.smileclinics.net/column/
 
 - `column/` : 칼럼 페이지와 칼럼 목록(`column/index.html`)
 - `images/col-*.jpg` : 칼럼 대표 이미지

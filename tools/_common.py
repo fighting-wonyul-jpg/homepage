@@ -2,7 +2,7 @@
 import os, re, json, html, datetime
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COL=os.path.join(ROOT,'column')+os.sep
-BASE='https://fighting-wonyul-jpg.github.io/homepage/'
+BASE='https://column.smileclinics.net/'
 TODAY=datetime.date.today().isoformat()
 NON_COLUMN={'index','doctor','privacy'}
 def site(): return json.load(open(os.path.join(ROOT,'tools','site.json'),encoding='utf-8'))
