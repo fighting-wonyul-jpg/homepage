@@ -20,7 +20,7 @@
 - `tools/site.json`: 분류, 많이 찾는 칼럼, 칼럼별 짧은 이름(labels), 검색 동의어. **분류를 바꾸면 여기를 고치고 build_index.py 실행.**
 - 루트 `index.html`, `install.html`: 예전 홈페이지와 앱 설치 주소(QR 포함)를 칼럼 목록으로 넘기는 이동 페이지입니다. 지우지 마세요.
 - `sw.js`: 예전에 앱으로 설치한 휴대폰의 캐시를 지우는 정리용입니다. 지우지 마세요.
-- `google465fb42647d81226.html`, `naver9d276fdbd37d1b84cc74531be623fba7.html`: 구글, 네이버 소유 확인 파일입니다. 지우지 마세요.
+- `google465fb42647d81226.html`, `naver9d276fdbd37d1b84cc74531be623fba7.html`(예전 주소), `naver241c4a714850bff6878bfed1f74169e6.html`(새 주소): 구글, 네이버 소유 확인 파일입니다. 지우지 마세요.
 
 ## 칼럼 한 편의 구성 (모든 칼럼 공통)
 
