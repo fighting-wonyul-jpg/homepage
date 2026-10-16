@@ -36,7 +36,7 @@
 2. 본문: `tools/content/example_chest_pain.py`를 복사해 `tools/content/<slug>.py`로 작성하고 실행합니다. 출력 글자 수는 4,000~5,000자 정도이고, desc(검색 설명)는 155자 이하로 씁니다.
 3. 중복 문장 검사: `python3 tools/dupcheck.py <slug>`. 다른 칼럼과 겹치는 본문 문장은 고쳐 씁니다.
 4. 표지: `tools/covers/example_heart.py`를 복사해 그리고 `images/col-<slug>.jpg`를 만듭니다. 사람 그림은 넣지 않고, 오른쪽 아래 초록 잎이 공통 표식입니다.
-5. `tools/site.json`의 categories 알맞은 분류에 slug를 넣고, labels에 짧은 이름을 넣습니다.
+5. `tools/site.json`의 categories 알맞은 분류에 slug를 넣고(맨 뒤가 아니라 비슷한 질환 바로 옆에, 예: 갑상선기능저하증 옆에 항진증), labels에 짧은 이름을 넣습니다.
 6. 마무리: `python3 tools/new_column.py finish <slug> <관련1> <관련2> <관련3>` → `python3 tools/build_index.py` → `python3 tools/link_orphans.py` → `python3 tools/check.py` ("문제 없음"이 나와야 합니다).
 
 기존 칼럼을 고칠 때는 해당 파일의 `"dateModified"`와 `sitemap.xml`의 `<lastmod>`를 고친 날짜로 바꿉니다 (`tools/_common.py`의 `touch`, `touch_sitemap`). 마지막에 항상 `python3 tools/check.py`를 실행합니다.
