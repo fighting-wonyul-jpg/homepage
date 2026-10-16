@@ -28,6 +28,7 @@
     "acute-back-pain",
     "lumbar-disc",
     "spinal-stenosis",
+    "post-spine-surgery",
     "spondylolisthesis",
     "sciatica",
     "piriformis",
@@ -42,17 +43,20 @@
    "무릎·발·관절",
    [
     "knee-arthritis",
+    "joint-replacement-rehab",
     "patellofemoral",
     "meniscus-tear",
     "pes-anserine",
     "baker-cyst",
     "ankle-sprain",
     "ankle-instability",
+    "fracture-recovery",
     "achilles",
     "plantar-fasciitis",
     "tarsal-tunnel",
     "bunion",
     "leg-cramps",
+    "muscle-strain",
     "rheumatoid",
     "gout",
     "fibromyalgia"
@@ -79,6 +83,7 @@
     "burning-mouth",
     "shingles",
     "postherpetic-neuralgia",
+    "crps",
     "numbness",
     "restless-legs",
     "tremor",
@@ -152,6 +157,7 @@
     "taste-disorder",
     "snoring",
     "chronic-cough",
+    "asthma",
     "globus",
     "lpr",
     "hoarseness",
@@ -170,6 +176,7 @@
     "pompholyx",
     "contact-dermatitis",
     "dry-itchy-skin",
+    "elderly-itch",
     "prurigo-nodularis",
     "urticaria",
     "dermatographism",
@@ -508,7 +515,14 @@
   "underweight": "저체중·살이 안 찜",
   "vitiligo": "백반증",
   "prurigo-nodularis": "결절성 양진",
-  "taste-disorder": "미각장애"
+  "taste-disorder": "미각장애",
+  "asthma": "천식",
+  "elderly-itch": "어르신 피부 가려움",
+  "post-spine-surgery": "척추 수술 후 통증",
+  "joint-replacement-rehab": "인공관절 수술 후 회복",
+  "fracture-recovery": "골절 후 통증·회복",
+  "muscle-strain": "운동 중 근육 손상",
+  "crps": "복합부위통증증후군(CRPS)"
  },
  "synonyms": {
   "arrhythmia": [
@@ -617,6 +631,35 @@
   "taste-disorder": [
    "맛을 못 느낌",
    "입맛"
+  ],
+  "asthma": [
+   "쌕쌕",
+   "숨참",
+   "기관지"
+  ],
+  "elderly-itch": [
+   "노인 가려움",
+   "소양증"
+  ],
+  "post-spine-surgery": [
+   "허리 수술 후",
+   "디스크 수술 후"
+  ],
+  "joint-replacement-rehab": [
+   "무릎 수술 후",
+   "인공관절"
+  ],
+  "fracture-recovery": [
+   "깁스",
+   "뼈 부러짐"
+  ],
+  "muscle-strain": [
+   "근육 파열",
+   "햄스트링",
+   "종아리"
+  ],
+  "crps": [
+   "복합부위"
   ]
  },
  "seasonal": {
