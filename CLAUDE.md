@@ -16,7 +16,7 @@
 - `column/site.js`: 체크리스트 눌러 체크(3개 이상이면 네이버 예약·카톡 문의·전화 안내), "가족에게 보내기"(휴대폰 공유창·링크 복사, 칼럼마다 글쓴이 소개 앞 `.share`), 칼럼 목록의 계절별 "요즘 많이 찾는 칼럼"(`tools/site.json`의 popular=항상, seasonal=봄·여름·가을·겨울). `tools/apply_extras.py`.
 - `column/ga.js`: 구글 애널리틱스(G-650CYRNZYH)와 클릭 기록. 이벤트: click_booking, click_kakao, click_call, click_map, click_blog, click_youtube (link_location: mobile_bar, pc_quick, header, visit_info, bottom_buttons, blog_box, author_box), search(search_term), checklist_result(checked), share(method). 모든 페이지 `<head>`에 들어감. 네이버 애널리틱스(wa 1284e5d119c14b0)는 `</body>` 바로 앞 (둘 다 `tools/apply_analytics.py`).
 - `images/col-<slug>.jpg`: 칼럼 표지 (1600x900). `images/logo-*.png`: 로고.
-- `sitemap.xml`: 칼럼 목록, 원장 소개, 칼럼 전체.
+- `sitemap.xml`: 칼럼 목록, 원장 소개, 칼럼 전체. `robots.txt`가 사이트맵 위치를 알려 줍니다.
 - `tools/site.json`: 분류, 많이 찾는 칼럼, 칼럼별 짧은 이름(labels), 검색 동의어. **분류를 바꾸면 여기를 고치고 build_index.py 실행.**
 - 루트 `index.html`, `install.html`: 예전 홈페이지와 앱 설치 주소(QR 포함)를 칼럼 목록으로 넘기는 이동 페이지입니다. 지우지 마세요.
 - `sw.js`: 예전에 앱으로 설치한 휴대폰의 캐시를 지우는 정리용입니다. 지우지 마세요.
