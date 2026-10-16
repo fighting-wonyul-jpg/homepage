@@ -63,15 +63,6 @@
    ]
   ],
   [
-   "교통사고 후유증",
-   [
-    "traffic-accident",
-    "whiplash",
-    "accident-headache",
-    "accident-insomnia"
-   ]
-  ],
-  [
    "두통·얼굴·신경",
    [
     "headache",
@@ -91,6 +82,15 @@
     "forgetfulness",
     "dementia-prevention",
     "stroke-sequelae"
+   ]
+  ],
+  [
+   "교통사고 후유증",
+   [
+    "traffic-accident",
+    "whiplash",
+    "accident-headache",
+    "accident-insomnia"
    ]
   ],
   [
@@ -133,6 +133,32 @@
     "halitosis",
     "hangover",
     "fatty-liver"
+   ]
+  ],
+  [
+   "체질·만성질환",
+   [
+    "tonic-herbs",
+    "chronic-fatigue",
+    "low-immunity",
+    "long-covid",
+    "cancer-recovery",
+    "spring-fatigue",
+    "seasonal-cold",
+    "aircon-sickness",
+    "heat-exhaustion",
+    "cold-hands-feet",
+    "edema",
+    "obesity",
+    "underweight",
+    "hypertension",
+    "hypotension",
+    "diabetes",
+    "hypothyroidism",
+    "hyperthyroidism",
+    "anemia",
+    "osteoporosis",
+    "sarcopenia"
    ]
   ],
   [
@@ -268,32 +294,6 @@
     "tic-disorder",
     "adhd",
     "student-fatigue"
-   ]
-  ],
-  [
-   "체질·만성질환",
-   [
-    "tonic-herbs",
-    "chronic-fatigue",
-    "low-immunity",
-    "long-covid",
-    "cancer-recovery",
-    "spring-fatigue",
-    "seasonal-cold",
-    "aircon-sickness",
-    "heat-exhaustion",
-    "cold-hands-feet",
-    "edema",
-    "obesity",
-    "underweight",
-    "hypertension",
-    "hypotension",
-    "diabetes",
-    "hypothyroidism",
-    "hyperthyroidism",
-    "anemia",
-    "osteoporosis",
-    "sarcopenia"
    ]
   ]
  ],
@@ -691,22 +691,22 @@
  "_note": "popular=항상 보이는 칼럼, seasonal=계절별(봄 3~5월, 여름 6~8월, 가을 9~11월, 겨울 12~2월)로 site.js가 자동으로 바꿔 보여 줌",
  "groups": [
   [
-   "통증·근골격",
+   "통증·신경통",
    "cat-pain",
-   "목·어깨부터 허리, 무릎·발목까지 근육·관절·척추 통증과 교통사고 후유증을 모았습니다. 관절과 척추 속은 초음파로 정확하게 확인하고, 지친 몸의 속은 맞춤 한약으로 깊이 있게 치료합니다. 아래에서 아픈 부위를 골라 보세요.",
+   "목·어깨부터 허리, 무릎·발목까지 근육·관절·척추 통증과 두통, 안면마비, 대상포진 후 신경통, 손발 저림 같은 신경 질환, 교통사고 후유증을 모았습니다. 관절과 척추 속은 초음파로 정확하게 확인하고, 지친 몸의 속은 맞춤 한약으로 깊이 있게 치료합니다. 아래에서 증상에 맞는 분류를 골라 보세요.",
    [
     "목·어깨·팔 통증",
     "허리·골반 통증",
     "무릎·발·관절",
+    "두통·얼굴·신경",
     "교통사고 후유증"
    ]
   ],
   [
-   "두통·신경·마음",
-   "cat-mind-nerve",
-   "두통, 안면마비, 손발 저림 같은 신경 증상과 불면, 불안, 공황, 두근거림처럼 마음과 자율신경에서 오는 증상을 모았습니다. 자율신경 검사로 몸 상태를 살피고 침·약침과 한약으로 관리합니다.",
+   "마음·수면·심장",
+   "cat-mind",
+   "불면, 불안, 공황, 우울, 화병과 두근거림·가슴 통증을 다룬 칼럼입니다. 자율신경 검사로 몸 상태를 살피고, 증상이 가벼운 경우 한약 치료를 중심으로 관리하기도 합니다. 증상이 깊으면 정신건강의학과 치료를 함께 받으시고, 처음 생긴 가슴 통증은 병원 검사가 먼저입니다.",
    [
-    "두통·얼굴·신경",
     "마음·수면·심장"
    ]
   ],
