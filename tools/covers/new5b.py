@@ -28,6 +28,6 @@ def f(im,d):  # fracture-recovery: 금이 갔다가 붙은 뼈와 깁스 붕대
     poly([(-120,-75),(120,-75),(120,75),(-120,75)],A((250,250,250)))
     for k in range(-100,101,40): ln(d,[P(k,-75),P(k+22,75)],A((214,222,228)),6)
     ln(d,[P(-150,-45),P(-135,-10),P(-160,10),P(-140,45)],A(RED,220),8)
-    spark(d,1060,250,80,A(AC)); LF(d)
+    spark(d,560,280,80,A(AC)); LF(d)
 go('fracture-recovery',*SKY,f)
 print('ok')
