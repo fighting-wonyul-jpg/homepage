@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://column.smileclinics.net/sitemap.xml
