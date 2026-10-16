@@ -10,7 +10,8 @@
 ## 구조
 
 - `column/<slug>.html`: 칼럼 한 편 = 파일 하나. 빌드 과정 없이 정적 HTML입니다.
-- `column/index.html`: 칼럼 목록. 검색창, 많이 찾는 칼럼, 15개 분류(교통사고 후유증·임신·출산 분류 포함), 목록이 들어 있으며 `tools/build_index.py`로 다시 만듭니다.
+- `column/index.html`: 칼럼 목록(첫 화면). 검색창(221편 전체 검색), 많이 찾는 칼럼, **대분류 15개 카드**만 보이고, 카드를 누르면 분류 페이지로 이동합니다. `tools/build_index.py`로 다시 만듭니다.
+- `column/cat-*.html`: 분류 페이지 15개(예: `cat-skin.html`). 분류 소개 글과 그 분류의 칼럼 목록. 소개 글과 파일 이름은 `tools/site.json`의 `cat_pages`에 있고, `build_index.py`가 칼럼 목록을 틀로 삼아 만들며 사이트맵에도 넣습니다. 칼럼 위치 표시(건강 칼럼 · 분류 · 칼럼)와 BreadcrumbList도 `build_index.py`가 맞춥니다. 예전 `#cat-숫자` 주소는 분류 페이지로 넘어갑니다.
 - `column/doctor.html`: 원장 소개 (유튜브 영상 삽입, 블로그 링크).
 - `column/privacy.html`: 개인정보 처리 안내 (`tools/make_privacy.py`). 모든 페이지 맨 아래 링크.
 - `column/site.js`: 체크리스트 눌러 체크(3개 이상이면 네이버 예약·카톡 문의·전화 안내), "가족에게 보내기"(휴대폰 공유창·링크 복사, 칼럼마다 글쓴이 소개 앞 `.share`), 칼럼 목록의 계절별 "요즘 많이 찾는 칼럼"(`tools/site.json`의 popular=항상, seasonal=봄·여름·가을·겨울). `tools/apply_extras.py`.

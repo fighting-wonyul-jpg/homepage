@@ -6,7 +6,7 @@ BASE='https://column.smileclinics.net/'
 TODAY=datetime.date.today().isoformat()
 NON_COLUMN={'index','doctor','privacy'}
 def site(): return json.load(open(os.path.join(ROOT,'tools','site.json'),encoding='utf-8'))
-def column_slugs(): return sorted(f[:-5] for f in os.listdir(COL) if f.endswith('.html') and f[:-5] not in NON_COLUMN)
+def column_slugs(): return sorted(f[:-5] for f in os.listdir(COL) if f.endswith('.html') and f[:-5] not in NON_COLUMN and not f.startswith('cat-'))
 def read(slug): return open(COL+slug+'.html',encoding='utf-8').read()
 def write(slug,s): open(COL+slug+'.html','w',encoding='utf-8').write(s)
 def touch(s,date=None):

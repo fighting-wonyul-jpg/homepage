@@ -6,7 +6,7 @@ from _common import COL, BASE, site, column_slugs
 p=COL+'doctor.html'; s=open(p,encoding='utf-8').read()
 DOC=BASE+'column/doctor.html'
 cats=site()['categories']; total=len(column_slugs())
-areas="\n".join(f'    <li><a href="./#cat-{i}">{html.escape(n)}</a></li>' for i,(n,_) in enumerate(cats,1))
+areas="\n".join(f'    <li><a href="{site()["cat_pages"][n][0]}.html">{html.escape(n)}</a></li>' for i,(n,_) in enumerate(cats,1))
 CAREER=['임상 경력 15년','현재 한의원(인천 서구 가정동)에서 개원 후 10년째 진료','FCST 턱관절학회','연부조직학회','침도학회','복지학회','동의방약학회']
 GROUPS=[('소화기',[('만성 소화불량','chronic-dyspepsia'),('위염','gastritis'),('담적병','damjeok'),('역류성 식도염','reflux-esophagitis'),('과민성대장증후군','ibs')]),
  ('신경정신계',[('두통','headache'),('어지럼증','dizziness'),('메니에르병','meniere'),('불면증','insomnia'),('화병','hwabyung'),('공황장애','panic-disorder'),('불안장애','anxiety-disorder'),('틱장애','tic-disorder')]),
