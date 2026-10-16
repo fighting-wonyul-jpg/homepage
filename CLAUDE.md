@@ -2,7 +2,8 @@
 
 인천 서구 가정동 365스마일한의원(문원열 대표원장)의 건강 칼럼 사이트입니다. GitHub Pages로 배포됩니다.
 
-- 칼럼 목록: https://fighting-wonyul-jpg.github.io/homepage/column/
+- 칼럼 목록: https://column.smileclinics.net/column/
+- 도메인: 루트 `CNAME` 파일(column.smileclinics.net). smileclinics.net은 가비아 등록(매년 11-13 만료), 네임서버는 카페24(ns1.cafe24.com)이며 카페24 도메인관리 → DNS 관리 → 별칭(CNAME)에 `column → fighting-wonyul-jpg.github.io`가 있습니다. 예전 주소(fighting-wonyul-jpg.github.io/homepage/)는 새 주소로 자동 이동합니다. `CNAME` 파일을 지우지 마세요.
 - 원장 소개: `column/doctor.html`
 - 사용자(원장님 쪽)와는 한국어로, 쉬운 말로 대화합니다. 작업 결과는 바뀐 칼럼과 바뀐 문장을 보여 주며 보고합니다.
 
