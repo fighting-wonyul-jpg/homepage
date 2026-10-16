@@ -158,7 +158,8 @@
     "tonsillitis",
     "dry-mouth",
     "mouth-ulcer",
-    "lpr"
+    "lpr",
+    "taste-disorder"
    ]
   ],
   [
@@ -180,7 +181,9 @@
     "cheilitis",
     "sun-allergy",
     "molluscum",
-    "dermatographism"
+    "dermatographism",
+    "vitiligo",
+    "prurigo-nodularis"
    ]
   ],
   [
@@ -502,7 +505,10 @@
   "postpartum-hair-loss": "출산 후 탈모",
   "nocturia": "야간뇨",
   "child-tonic": "아이 보약",
-  "underweight": "저체중·살이 안 찜"
+  "underweight": "저체중·살이 안 찜",
+  "vitiligo": "백반증",
+  "prurigo-nodularis": "결절성 양진",
+  "taste-disorder": "미각장애"
  },
  "synonyms": {
   "arrhythmia": [
@@ -599,6 +605,18 @@
   "preconception": [
    "임신 준비",
    "엽산"
+  ],
+  "vitiligo": [
+   "흰 반점",
+   "백납"
+  ],
+  "prurigo-nodularis": [
+   "양진",
+   "가려운 혹"
+  ],
+  "taste-disorder": [
+   "맛을 못 느낌",
+   "입맛"
   ]
  },
  "seasonal": {
