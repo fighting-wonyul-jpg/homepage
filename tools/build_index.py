@@ -80,6 +80,7 @@ TOP=f'''  <p class="cat-label">요즘 많이 찾는 칼럼</p>
     msg.textContent = n ? '검색 결과 '+n+'편' : '찾는 칼럼이 없습니다. 증상이 궁금하시면 0507-1495-4600으로 전화 주세요.';
   }
   q.addEventListener('input', search);
+  var p0=new URLSearchParams(location.search).get('q'); if(p0){ q.value=p0; search(); }
 })();
 </script>
 '''.replace('{CATMAP}',json.dumps({f'cat-{i}':sublink(n) for i,n in enumerate(LEGACY,1)}))
@@ -99,6 +100,7 @@ CSS='''  .catgrid { display: grid; gap: 10px; grid-template-columns: 1fr; margin
   .sub h2 { margin: 0 0 6px; }
   .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .qon .sub-intro, .qon .lead-p { display: none; }
 '''
 s=re.sub(r'  <div class="search">.*?</div>\n','',s,count=1,flags=re.S)
 a=s.index('  <p class="cat-label">')
@@ -145,7 +147,12 @@ def catpage(g):
     body=(f'  <p class="crumb"><a href="./">건강 칼럼</a> · {html.escape(gname)}</p>\n'
           f'  <h1>{html.escape(h1)} <small style="font-size:.55em;color:var(--muted)">{len(ss)}편</small></h1>\n'
           f'  <p class="lead-p">{html.escape(intro)}</p>\n'
-          '  <a class="back" href="./">← 전체 분류 보기</a>\n')
+          '  <a class="back" href="./">← 전체 분류 보기</a>\n'
+          '  <div class="search">\n'
+          f'    <label for="q">{html.escape(gname)}에서 찾기</label>\n'
+          f'    <input id="q" type="search" placeholder="예: {", ".join(html.escape(re.split(r"[·(]",LABEL[x])[0]) for x in ([CATD[n][0] for n in subs[:3]] if len(subs)>1 else ss[:3]))}" autocomplete="off">\n'
+          '    <p class="search-msg" id="qmsg" aria-live="polite"></p>\n'
+          '  </div>\n')
     if len(subs)>1:
         body+='  <ul class="cat-nav sub-chips">\n'+f'    <li><a href="#" data-s="all" aria-current="true">전체<small>{len(ss)}</small></a></li>\n'
         body+="\n".join(f'    <li><a href="#c{CI[n]}" data-s="c{CI[n]}">{html.escape(n)}<small>{len(CATD[n])}</small></a></li>' for n in subs)+'\n  </ul>\n'
@@ -158,11 +165,35 @@ def catpage(g):
     else:
         body+='  <div class="grid2">\n'+"\n".join(card(x) for x in ss)+'\n  </div>\n'
     body+='  <p class="cat-label">다른 분류 보기</p>\n  <ul class="cat-chips">\n'+others+'\n  </ul>\n'
-    a=t.index('  <p class="crumb">'); b=t.index('</script>',t.index('<script>',t.index('<section class="cat"')))+len('</script>\n')
-    t=t[:a]+body+t[b:]
     t=re.sub(r'  <div class="search">.*?</div>\n','',t,count=1,flags=re.S)
+    a=t.index('  <p class="crumb">'); b=t.index('</script>',t.index('<script>',t.index('<section class="cat"')))+len('</script>\n')
+    t=t[:a]+body+CATSEARCHJS+t[b:]
     open(COL+slug+'.html','w',encoding='utf-8').write(t)
     return slug
+CATSEARCHJS="""<script>
+(function(){
+  var q=document.getElementById('q'), msg=document.getElementById('qmsg');
+  var items=document.querySelectorAll('.grid2 .item'), secs=document.querySelectorAll('.sub'), chips=document.querySelector('.sub-chips');
+  function norm(t){ return (t||'').toLowerCase().replace(/[\\s·()（）,.]/g,''); }
+  items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
+  q.addEventListener('input', function(){
+    var t=norm(q.value);
+    document.body.classList.toggle('qon', !!t);
+    if(!t){
+      items.forEach(function(a){ a.hidden=false; }); msg.textContent='';
+      if(chips){ chips.style.display=''; window.dispatchEvent(new Event('hashchange')); }
+      return;
+    }
+    if(chips) chips.style.display='none';
+    var n=0;
+    items.forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) n++; });
+    secs.forEach(function(s){ s.hidden = !s.querySelector('.item:not([hidden])'); });
+    if(n){ msg.textContent='검색 결과 '+n+'편'; }
+    else { msg.innerHTML='이 분류에는 찾는 칼럼이 없습니다. <a href="./?q='+encodeURIComponent(q.value)+'">전체 칼럼에서 찾기 →</a>'; }
+  });
+})();
+</script>
+"""
 SUBJS="""<script>
 (function(){
   var chips=document.querySelectorAll('.sub-chips a'), secs=document.querySelectorAll('.sub');

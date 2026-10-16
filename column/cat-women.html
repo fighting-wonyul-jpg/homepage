@@ -467,6 +467,7 @@
   .sub h2 { margin: 0 0 6px; }
   .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .qon .sub-intro, .qon .lead-p { display: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-650CYRNZYH"></script>
 <script src="ga.js" defer></script>
@@ -484,6 +485,11 @@
   <h1>여성·임신·남성 칼럼 <small style="font-size:.55em;color:var(--muted)">34편</small></h1>
   <p class="lead-p">생리·자궁·갱년기 같은 여성 질환, 임신 준비부터 산후 회복까지, 그리고 남성 갱년기·전립선·비뇨기 질환을 모았습니다. 체성분·혈액 검사와 진맥으로 몸 상태를 살펴 탕약과 침으로 관리합니다.</p>
   <a class="back" href="./">← 전체 분류 보기</a>
+  <div class="search">
+    <label for="q">여성·임신·남성에서 찾기</label>
+    <input id="q" type="search" placeholder="예: 생리통, 임신 준비, 남성 갱년기" autocomplete="off">
+    <p class="search-msg" id="qmsg" aria-live="polite"></p>
+  </div>
   <ul class="cat-nav sub-chips">
     <li><a href="#" data-s="all" aria-current="true">전체<small>34</small></a></li>
     <li><a href="#c12" data-s="c12">여성 건강<small>16</small></a></li>
@@ -571,6 +577,29 @@
     <li><a href="cat-women.html" aria-current="page">여성·임신·남성</a></li>
     <li><a href="cat-children.html">소아</a></li>
   </ul>
+<script>
+(function(){
+  var q=document.getElementById('q'), msg=document.getElementById('qmsg');
+  var items=document.querySelectorAll('.grid2 .item'), secs=document.querySelectorAll('.sub'), chips=document.querySelector('.sub-chips');
+  function norm(t){ return (t||'').toLowerCase().replace(/[\s·()（）,.]/g,''); }
+  items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
+  q.addEventListener('input', function(){
+    var t=norm(q.value);
+    document.body.classList.toggle('qon', !!t);
+    if(!t){
+      items.forEach(function(a){ a.hidden=false; }); msg.textContent='';
+      if(chips){ chips.style.display=''; window.dispatchEvent(new Event('hashchange')); }
+      return;
+    }
+    if(chips) chips.style.display='none';
+    var n=0;
+    items.forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) n++; });
+    secs.forEach(function(s){ s.hidden = !s.querySelector('.item:not([hidden])'); });
+    if(n){ msg.textContent='검색 결과 '+n+'편'; }
+    else { msg.innerHTML='이 분류에는 찾는 칼럼이 없습니다. <a href="./?q='+encodeURIComponent(q.value)+'">전체 칼럼에서 찾기 →</a>'; }
+  });
+})();
+</script>
   <div class="blogbox">
     <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
     <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>

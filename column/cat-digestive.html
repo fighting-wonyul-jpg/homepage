@@ -353,6 +353,7 @@
   .sub h2 { margin: 0 0 6px; }
   .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .qon .sub-intro, .qon .lead-p { display: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-650CYRNZYH"></script>
 <script src="ga.js" defer></script>
@@ -370,6 +371,11 @@
   <h1>소화기 칼럼 <small style="font-size:.55em;color:var(--muted)">15편</small></h1>
   <p class="lead-p">급체, 만성소화불량, 역류성식도염, 과민성대장증후군, 변비처럼 반복되는 소화 문제를 정리했습니다. 급성 증상은 짧게, 담적병처럼 오래된 증상은 단계를 나눠 침과 탕약으로 관리합니다. 체중이 줄거나 피가 섞인 변, 검은 변이 보이면 내시경 검사가 먼저입니다.</p>
   <a class="back" href="./">← 전체 분류 보기</a>
+  <div class="search">
+    <label for="q">소화기에서 찾기</label>
+    <input id="q" type="search" placeholder="예: 급체, 위경련, 만성소화불량" autocomplete="off">
+    <p class="search-msg" id="qmsg" aria-live="polite"></p>
+  </div>
   <div class="grid2">
       <a class="item" href="acute-indigestion.html" data-k="급체·체기"><img src="../images/col-acute-indigestion.jpg" alt="" loading="lazy"><span><small>급체·체기</small>갑자기 명치가 꽉 막히고 손발이 차다면, 급체·체기 한방 치료</span></a>
       <a class="item" href="stomach-cramp.html" data-k="위경련 명치 통증 급체 기능성 소화불량"><img src="../images/col-stomach.jpg" alt="" loading="lazy"><span><small>위경련</small>명치가 쥐어짜듯 아플 때, 위경련 응급 신호와 한방 관리</span></a>
@@ -398,6 +404,29 @@
     <li><a href="cat-women.html">여성·임신·남성</a></li>
     <li><a href="cat-children.html">소아</a></li>
   </ul>
+<script>
+(function(){
+  var q=document.getElementById('q'), msg=document.getElementById('qmsg');
+  var items=document.querySelectorAll('.grid2 .item'), secs=document.querySelectorAll('.sub'), chips=document.querySelector('.sub-chips');
+  function norm(t){ return (t||'').toLowerCase().replace(/[\s·()（）,.]/g,''); }
+  items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
+  q.addEventListener('input', function(){
+    var t=norm(q.value);
+    document.body.classList.toggle('qon', !!t);
+    if(!t){
+      items.forEach(function(a){ a.hidden=false; }); msg.textContent='';
+      if(chips){ chips.style.display=''; window.dispatchEvent(new Event('hashchange')); }
+      return;
+    }
+    if(chips) chips.style.display='none';
+    var n=0;
+    items.forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) n++; });
+    secs.forEach(function(s){ s.hidden = !s.querySelector('.item:not([hidden])'); });
+    if(n){ msg.textContent='검색 결과 '+n+'편'; }
+    else { msg.innerHTML='이 분류에는 찾는 칼럼이 없습니다. <a href="./?q='+encodeURIComponent(q.value)+'">전체 칼럼에서 찾기 →</a>'; }
+  });
+})();
+</script>
   <div class="blogbox">
     <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
     <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>

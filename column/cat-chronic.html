@@ -383,6 +383,7 @@
   .sub h2 { margin: 0 0 6px; }
   .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .qon .sub-intro, .qon .lead-p { display: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-650CYRNZYH"></script>
 <script src="ga.js" defer></script>
@@ -400,6 +401,11 @@
   <h1>체질·만성질환 칼럼 <small style="font-size:.55em;color:var(--muted)">20편</small></h1>
   <p class="lead-p">만성피로, 수족냉증, 비만·저체중, 고혈압, 당뇨, 갑상선 질환, 골다공증처럼 오래 관리해야 하는 몸 상태를 다룬 칼럼입니다. 자율신경·체성분·혈액 검사로 몸 상태를 확인하고, 원장이 원내 탕전실에서 직접 달인 한약을 10일분씩 처방해 경과에 따라 조절합니다. 혈압약·당뇨약·갑상선약은 담당 의사와 상의 없이 끊지 마세요.</p>
   <a class="back" href="./">← 전체 분류 보기</a>
+  <div class="search">
+    <label for="q">체질·만성질환에서 찾기</label>
+    <input id="q" type="search" placeholder="예: 보약, 만성피로, 면역력 저하" autocomplete="off">
+    <p class="search-msg" id="qmsg" aria-live="polite"></p>
+  </div>
   <div class="grid2">
       <a class="item" href="tonic-herbs.html" data-k="보약 기력 회복 기운 없음 체질 보약 보약 기력"><img src="../images/col-tonic-herbs.jpg" alt="" loading="lazy"><span><small>보약·기력 저하</small>기운이 없고 쉽게 지친다면, 보약이 필요한 몸과 한방 관리</span></a>
       <a class="item" href="chronic-fatigue.html" data-k="만성피로"><img src="../images/col-chronic-fatigue.jpg" alt="" loading="lazy"><span><small>만성피로</small>자도 자도 피곤하다면, 만성피로의 원인 확인과 한방 관리</span></a>
@@ -433,6 +439,29 @@
     <li><a href="cat-women.html">여성·임신·남성</a></li>
     <li><a href="cat-children.html">소아</a></li>
   </ul>
+<script>
+(function(){
+  var q=document.getElementById('q'), msg=document.getElementById('qmsg');
+  var items=document.querySelectorAll('.grid2 .item'), secs=document.querySelectorAll('.sub'), chips=document.querySelector('.sub-chips');
+  function norm(t){ return (t||'').toLowerCase().replace(/[\s·()（）,.]/g,''); }
+  items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
+  q.addEventListener('input', function(){
+    var t=norm(q.value);
+    document.body.classList.toggle('qon', !!t);
+    if(!t){
+      items.forEach(function(a){ a.hidden=false; }); msg.textContent='';
+      if(chips){ chips.style.display=''; window.dispatchEvent(new Event('hashchange')); }
+      return;
+    }
+    if(chips) chips.style.display='none';
+    var n=0;
+    items.forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) n++; });
+    secs.forEach(function(s){ s.hidden = !s.querySelector('.item:not([hidden])'); });
+    if(n){ msg.textContent='검색 결과 '+n+'편'; }
+    else { msg.innerHTML='이 분류에는 찾는 칼럼이 없습니다. <a href="./?q='+encodeURIComponent(q.value)+'">전체 칼럼에서 찾기 →</a>'; }
+  });
+})();
+</script>
   <div class="blogbox">
     <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
     <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>

@@ -401,6 +401,7 @@
   .sub h2 { margin: 0 0 6px; }
   .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
   .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+  .qon .sub-intro, .qon .lead-p { display: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-650CYRNZYH"></script>
 <script src="ga.js" defer></script>
@@ -418,6 +419,11 @@
   <h1>소아 칼럼 <small style="font-size:.55em;color:var(--muted)">23편</small></h1>
   <p class="lead-p">성장, 비염, 잦은 감기, 식욕부진, 야뇨, 틱, 아토피처럼 아이들이 자주 겪는 증상을 모았습니다. 아이에게는 약침을 쓰지 않고 피부에 붙이는 소아 스티커침을 쓰며, 한약은 쓴맛이 덜한 약재 위주로 처방합니다. 집에서 단것을 조금 타서 먹여도 되지만, 돌이 지나지 않은 아기에게는 꿀을 타지 마세요.</p>
   <a class="back" href="./">← 전체 분류 보기</a>
+  <div class="search">
+    <label for="q">소아에서 찾기</label>
+    <input id="q" type="search" placeholder="예: 아이 보약, 소아 성장, 성장통" autocomplete="off">
+    <p class="search-msg" id="qmsg" aria-live="polite"></p>
+  </div>
   <div class="grid2">
       <a class="item" href="child-tonic.html" data-k="아이 보약 소아 보약 성장기 보약 소아 한의원 보약 녹용 어린이 한약"><img src="../images/col-child-tonic.jpg" alt="" loading="lazy"><span><small>아이 보약</small>아이가 자주 지치고 입이 짧다면, 아이 보약이 필요한 때와 한방 관리</span></a>
       <a class="item" href="child-growth.html" data-k="소아 성장 키 성장 성장 클리닉 성조숙증 아이 식욕부진 한방소아과"><img src="../images/col-growth.jpg" alt="" loading="lazy"><span><small>소아 성장</small>우리 아이 키, 언제 확인해야 할까? 성장 방해 요인과 한방 관리</span></a>
@@ -454,6 +460,29 @@
     <li><a href="cat-women.html">여성·임신·남성</a></li>
     <li><a href="cat-children.html" aria-current="page">소아</a></li>
   </ul>
+<script>
+(function(){
+  var q=document.getElementById('q'), msg=document.getElementById('qmsg');
+  var items=document.querySelectorAll('.grid2 .item'), secs=document.querySelectorAll('.sub'), chips=document.querySelector('.sub-chips');
+  function norm(t){ return (t||'').toLowerCase().replace(/[\s·()（）,.]/g,''); }
+  items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
+  q.addEventListener('input', function(){
+    var t=norm(q.value);
+    document.body.classList.toggle('qon', !!t);
+    if(!t){
+      items.forEach(function(a){ a.hidden=false; }); msg.textContent='';
+      if(chips){ chips.style.display=''; window.dispatchEvent(new Event('hashchange')); }
+      return;
+    }
+    if(chips) chips.style.display='none';
+    var n=0;
+    items.forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) n++; });
+    secs.forEach(function(s){ s.hidden = !s.querySelector('.item:not([hidden])'); });
+    if(n){ msg.textContent='검색 결과 '+n+'편'; }
+    else { msg.innerHTML='이 분류에는 찾는 칼럼이 없습니다. <a href="./?q='+encodeURIComponent(q.value)+'">전체 칼럼에서 찾기 →</a>'; }
+  });
+})();
+</script>
   <div class="blogbox">
     <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
     <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>
