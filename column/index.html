@@ -1555,6 +1555,18 @@
   .share button { font: inherit; font-weight: 700; font-size: .92rem; padding: 9px 16px; border-radius: 10px; cursor: pointer; border: 1.5px solid var(--brand); background: var(--bg); color: var(--brand); }
   .share button.sh-native { background: var(--brand); color: var(--on-brand); }
   .share .sh-msg { margin: 8px 0 0; font-size: .85rem; font-weight: 400; color: var(--muted); min-height: 1em; }
+  .catgrid { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); margin: 0 0 8px; }
+  @media (min-width: 640px) { .catgrid { grid-template-columns: repeat(3, 1fr); } }
+  .catcard { display: block; padding: 14px 14px 12px; border: 1px solid var(--line); border-left: 4px solid var(--brand); border-radius: 14px; background: var(--bg); color: var(--text); text-decoration: none; line-height: 1.45; }
+  .catcard:hover { border-color: var(--brand); }
+  .catcard b { display: block; font-size: 1rem; }
+  .catcard small { display: inline-block; margin-top: 2px; color: var(--brand); font-weight: 700; font-size: .82rem; }
+  .catcard span { display: block; margin-top: 4px; color: var(--muted); font-size: .8rem; }
+  .searching .catgrid { display: none; }
+  .cat-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 4px; padding: 0; list-style: none; }
+  .cat-chips a { display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); text-decoration: none; font-size: .85rem; font-weight: 600; background: var(--bg); }
+  .cat-chips a[aria-current="page"] { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+  .back { display: inline-block; margin: 4px 0 18px; font-weight: 700; text-decoration: none; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-650CYRNZYH"></script>
 <script src="ga.js" defer></script>
@@ -1575,10 +1587,6 @@
     <label for="q">질환명으로 찾기</label>
     <input id="q" type="search" placeholder="예: 이석증, 허리디스크, 생리통" autocomplete="off">
     <p class="search-msg" id="qmsg" aria-live="polite"></p>
-  </div>
-  <div class="blogbox">
-    <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
-    <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>
   </div>
   <p class="cat-label">요즘 많이 찾는 칼럼</p>
   <ul class="pop">
@@ -1602,25 +1610,24 @@
     <li data-season="winter" hidden><a href="dry-itchy-skin.html">피부건조증</a></li>
   </ul>
   <p class="cat-label">분류별로 보기</p>
-  <ul class="cat-nav">
-    <li><a href="./" data-cat="all" aria-current="true">전체<small>221</small></a></li>
-    <li><a href="#cat-1" data-cat="cat-1">목·어깨·팔 통증<small>17</small></a></li>
-    <li><a href="#cat-2" data-cat="cat-2">허리·골반 통증<small>12</small></a></li>
-    <li><a href="#cat-3" data-cat="cat-3">무릎·발·관절<small>18</small></a></li>
-    <li><a href="#cat-4" data-cat="cat-4">교통사고 후유증<small>4</small></a></li>
-    <li><a href="#cat-5" data-cat="cat-5">두통·얼굴·신경<small>17</small></a></li>
-    <li><a href="#cat-6" data-cat="cat-6">마음·수면·심장<small>16</small></a></li>
-    <li><a href="#cat-7" data-cat="cat-7">소화기<small>16</small></a></li>
-    <li><a href="#cat-8" data-cat="cat-8">어지럼·귀<small>8</small></a></li>
-    <li><a href="#cat-9" data-cat="cat-9">코·목·눈·입<small>15</small></a></li>
-    <li><a href="#cat-10" data-cat="cat-10">피부<small>20</small></a></li>
-    <li><a href="#cat-11" data-cat="cat-11">여성 건강<small>16</small></a></li>
-    <li><a href="#cat-12" data-cat="cat-12">임신·출산<small>11</small></a></li>
-    <li><a href="#cat-13" data-cat="cat-13">남성·비뇨기<small>7</small></a></li>
-    <li><a href="#cat-14" data-cat="cat-14">소아<small>23</small></a></li>
-    <li><a href="#cat-15" data-cat="cat-15">체질·만성질환<small>21</small></a></li>
-  </ul>
-  <section class="cat" id="cat-1">
+  <div class="catgrid">
+    <a class="catcard" href="cat-neck-shoulder.html"><b>목·어깨·팔 통증</b><small>17편</small><span>목디스크·거북목 · 뒷목 당김 · 담 결림</span></a>
+    <a class="catcard" href="cat-back.html"><b>허리·골반 통증</b><small>12편</small><span>급성 요통 · 허리디스크 · 척추관협착증</span></a>
+    <a class="catcard" href="cat-joint.html"><b>무릎·발·관절</b><small>18편</small><span>무릎관절염 · 인공관절 수술 후 회복 · 무릎 앞쪽 통증</span></a>
+    <a class="catcard" href="cat-accident.html"><b>교통사고 후유증</b><small>4편</small><span>교통사고 후유증 · 교통사고 목 통증 · 교통사고 후 두통·어지럼</span></a>
+    <a class="catcard" href="cat-head-nerve.html"><b>두통·얼굴·신경</b><small>17편</small><span>두통·편두통 · 군발두통 · 턱관절장애</span></a>
+    <a class="catcard" href="cat-mind.html"><b>마음·수면·심장</b><small>16편</small><span>불면증 · 불안장애 · 공황장애</span></a>
+    <a class="catcard" href="cat-digestive.html"><b>소화기</b><small>16편</small><span>급체·체기 · 위경련 · 만성소화불량</span></a>
+    <a class="catcard" href="cat-ear.html"><b>어지럼·귀</b><small>8편</small><span>어지럼증 · 이석증 · 전정신경염</span></a>
+    <a class="catcard" href="cat-ent.html"><b>코·목·눈·입</b><small>15편</small><span>알레르기 비염 · 축농증 · 후각장애</span></a>
+    <a class="catcard" href="cat-skin.html"><b>피부</b><small>20편</small><span>아토피피부염 · 습진 · 한포진</span></a>
+    <a class="catcard" href="cat-women.html"><b>여성 건강</b><small>16편</small><span>생리통 · 생리 편두통 · 생리전증후군</span></a>
+    <a class="catcard" href="cat-pregnancy.html"><b>임신·출산</b><small>11편</small><span>임신 준비 · 난임 · 습관성 유산</span></a>
+    <a class="catcard" href="cat-men.html"><b>남성·비뇨기</b><small>7편</small><span>남성 갱년기 · 발기부전 · 남성 난임</span></a>
+    <a class="catcard" href="cat-children.html"><b>소아</b><small>23편</small><span>아이 보약 · 소아 성장 · 성장통</span></a>
+    <a class="catcard" href="cat-chronic.html"><b>체질·만성질환</b><small>21편</small><span>보약·기력 저하 · 만성피로 · 면역력 저하</span></a>
+  </div>
+  <section class="cat" id="cat-1" hidden>
     <h2>목·어깨·팔 통증 <small>17편</small></h2>
     <div class="grid2">
       <a class="item" href="neck-disc.html" data-k="목디스크 거북목 일자목 팔 저림 목 통증 초음파 가이드 약침"><img src="../images/col-neck.jpg" alt="" loading="lazy"><span><small>목디스크·거북목</small>목이 뻣뻣하고 팔까지 저리다면, 목디스크와 거북목 한방 치료</span></a>
@@ -1642,7 +1649,7 @@
       <a class="item" href="intercostal-neuralgia.html" data-k="갈비뼈 통증(늑간신경통) 초음파 가이드 약침"><img src="../images/col-intercostal-neuralgia.jpg" alt="" loading="lazy"><span><small>갈비뼈 통증(늑간신경통)</small>숨 쉴 때 갈비뼈가 찌릿하다면, 늑간신경통 한방 치료</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-2">
+  <section class="cat" id="cat-2" hidden>
     <h2>허리·골반 통증 <small>12편</small></h2>
     <div class="grid2">
       <a class="item" href="acute-back-pain.html" data-k="급성 요통 초음파 가이드 약침"><img src="../images/col-acute-back-pain.jpg" alt="" loading="lazy"><span><small>급성 요통</small>허리를 삐끗해 움직이기 힘들다면, 급성 요통 한방 치료</span></a>
@@ -1659,7 +1666,7 @@
       <a class="item" href="hip-pain.html" data-k="고관절 통증 초음파 가이드 약침"><img src="../images/col-hip-pain.jpg" alt="" loading="lazy"><span><small>고관절 통증</small>걷거나 다리를 벌릴 때 사타구니가 아프다면, 고관절 통증 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-3">
+  <section class="cat" id="cat-3" hidden>
     <h2>무릎·발·관절 <small>18편</small></h2>
     <div class="grid2">
       <a class="item" href="knee-arthritis.html" data-k="무릎관절염 초음파 가이드 약침"><img src="../images/col-knee-arthritis.jpg" alt="" loading="lazy"><span><small>무릎관절염</small>계단을 내려갈 때 무릎이 시큰하다면, 퇴행성 무릎관절염 한방 관리</span></a>
@@ -1682,7 +1689,7 @@
       <a class="item" href="fibromyalgia.html" data-k="섬유근육통"><img src="../images/col-fibromyalgia.jpg" alt="" loading="lazy"><span><small>섬유근육통</small>온몸이 쑤시고 피곤하다면, 섬유근육통 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-4">
+  <section class="cat" id="cat-4" hidden>
     <h2>교통사고 후유증 <small>4편</small></h2>
     <div class="grid2">
       <a class="item" href="traffic-accident.html" data-k="교통사고 후유증 자동차보험 한의원 목 통증 허리 통증 편타손상 초음파 가이드 약침 자동차보험 자보 교통사고"><img src="../images/col-traffic.jpg" alt="" loading="lazy"><span><small>교통사고 후유증</small>사고 직후보다 며칠 뒤가 더 아프다면, 교통사고 후유증 한방 치료</span></a>
@@ -1691,7 +1698,7 @@
       <a class="item" href="accident-insomnia.html" data-k="교통사고 후 불면 교통사고 트라우마 교통사고 불안 자동차보험 한의원 교통사고 자보"><img src="../images/col-traffic.jpg" alt="" loading="lazy"><span><small>교통사고 후 불면·불안</small>교통사고 뒤 잠을 못 자고 불안하다면, 교통사고 후 불면·불안 한방 치료</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-5">
+  <section class="cat" id="cat-5" hidden>
     <h2>두통·얼굴·신경 <small>17편</small></h2>
     <div class="grid2">
       <a class="item" href="headache.html" data-k="편두통 긴장성 두통 만성 두통 진통제 과용"><img src="../images/col-headache.jpg" alt="" loading="lazy"><span><small>두통·편두통</small>진통제가 늘어만 간다면, 반복되는 두통과 편두통 한방 치료</span></a>
@@ -1713,7 +1720,7 @@
       <a class="item" href="stroke-sequelae.html" data-k="중풍 후유증"><img src="../images/col-stroke-sequelae.jpg" alt="" loading="lazy"><span><small>중풍 후유증</small>중풍 후 남은 마비와 저림이 있다면, 중풍 후유증 한방 재활</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-6">
+  <section class="cat" id="cat-6" hidden>
     <h2>마음·수면·심장 <small>16편</small></h2>
     <div class="grid2">
       <a class="item" href="insomnia.html" data-k="불면증 수면장애 잠이 안 올 때 새벽에 깸"><img src="../images/col-insomnia.jpg" alt="" loading="lazy"><span><small>불면증</small>누워도 정신이 또렷해지는 밤, 불면증 한방 치료와 수면 습관</span></a>
@@ -1734,7 +1741,7 @@
       <a class="item" href="chest-pain.html" data-k="흉통 가슴 통증 가슴 답답함 흉비 심장 가슴"><img src="../images/col-chest-pain.jpg" alt="" loading="lazy"><span><small>흉통(가슴 통증)</small>가슴이 아프고 답답하다면, 흉통 원인 구별과 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-7">
+  <section class="cat" id="cat-7" hidden>
     <h2>소화기 <small>16편</small></h2>
     <div class="grid2">
       <a class="item" href="acute-indigestion.html" data-k="급체·체기"><img src="../images/col-acute-indigestion.jpg" alt="" loading="lazy"><span><small>급체·체기</small>갑자기 명치가 꽉 막히고 손발이 차다면, 급체·체기 한방 치료</span></a>
@@ -1755,7 +1762,7 @@
       <a class="item" href="fatty-liver.html" data-k="지방간"><img src="../images/col-fatty-liver.jpg" alt="" loading="lazy"><span><small>지방간</small>건강검진에서 지방간이 나왔다면, 지방간 관리와 한방</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-8">
+  <section class="cat" id="cat-8" hidden>
     <h2>어지럼·귀 <small>8편</small></h2>
     <div class="grid2">
       <a class="item" href="dizziness.html" data-k="어지럼증 이석증 기립성 어지럼 현훈"><img src="../images/col-dizziness.jpg" alt="" loading="lazy"><span><small>어지럼증</small>일어설 때마다 핑 도는 느낌, 어지럼증 원인별 한방 관리</span></a>
@@ -1768,7 +1775,7 @@
       <a class="item" href="eustachian.html" data-k="귀 먹먹함(이관기능장애)"><img src="../images/col-eustachian.jpg" alt="" loading="lazy"><span><small>귀 먹먹함(이관기능장애)</small>귀가 막힌 듯 먹먹하다면, 이관기능장애 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-9">
+  <section class="cat" id="cat-9" hidden>
     <h2>코·목·눈·입 <small>15편</small></h2>
     <div class="grid2">
       <a class="item" href="allergic-rhinitis.html" data-k="알레르기 비염 환절기 비염 재채기 맑은 콧물 코막힘"><img src="../images/col-allergic-rhinitis.jpg" alt="" loading="lazy"><span><small>알레르기 비염</small>재채기가 멈추지 않는 환절기, 성인 알레르기 비염 한방 치료</span></a>
@@ -1788,7 +1795,7 @@
       <a class="item" href="eye-strain.html" data-k="안구피로·눈 떨림"><img src="../images/col-eye-strain.jpg" alt="" loading="lazy"><span><small>안구피로·눈 떨림</small>눈이 뻑뻑하고 눈꺼풀이 떨린다면, 안구피로·눈 떨림 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-10">
+  <section class="cat" id="cat-10" hidden>
     <h2>피부 <small>20편</small></h2>
     <div class="grid2">
       <a class="item" href="atopic-dermatitis.html" data-k="아토피피부염 아토피 소아 아토피 성인 아토피 가려움 한방피부과"><img src="../images/col-atopic.jpg" alt="" loading="lazy"><span><small>아토피피부염</small>밤마다 긁느라 잠 못 드는 피부, 아토피피부염 한방 관리</span></a>
@@ -1813,7 +1820,7 @@
       <a class="item" href="hair-loss.html" data-k="탈모"><img src="../images/col-hair-loss.jpg" alt="" loading="lazy"><span><small>탈모</small>머리카락이 눈에 띄게 빠진다면, 탈모 유형 확인과 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-11">
+  <section class="cat" id="cat-11" hidden>
     <h2>여성 건강 <small>16편</small></h2>
     <div class="grid2">
       <a class="item" href="menstrual-pain.html" data-k="생리통 월경통 아랫배 통증 생리 불순 한방부인과"><img src="../images/col-menstrual.jpg" alt="" loading="lazy"><span><small>생리통</small>매달 진통제 없이는 버티기 힘들다면, 생리통 한방 치료와 관리</span></a>
@@ -1834,7 +1841,7 @@
       <a class="item" href="menopause-diet.html" data-k="갱년기 다이어트 갱년기 뱃살 폐경 후 체중 증가 다이어트 살 뱃살"><img src="../images/col-menopause-diet.jpg" alt="" loading="lazy"><span><small>갱년기 다이어트</small>폐경 전후로 뱃살이 늘었다면, 갱년기 다이어트 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-12">
+  <section class="cat" id="cat-12" hidden>
     <h2>임신·출산 <small>11편</small></h2>
     <div class="grid2">
       <a class="item" href="preconception.html" data-k="임신 준비 임신 전 한약 가임력 관리 임신 준비 엽산"><img src="../images/col-preconception.jpg" alt="" loading="lazy"><span><small>임신 준비</small>임신을 계획하고 있다면, 임신 준비 몸 만들기 한방 관리</span></a>
@@ -1850,7 +1857,7 @@
       <a class="item" href="postpartum-hair-loss.html" data-k="산후 탈모 출산 후 탈모 휴지기 탈모"><img src="../images/col-postpartum-hair-loss.jpg" alt="" loading="lazy"><span><small>출산 후 탈모</small>출산 뒤 머리카락이 한 움큼씩 빠진다면, 산후 탈모 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-13">
+  <section class="cat" id="cat-13" hidden>
     <h2>남성·비뇨기 <small>7편</small></h2>
     <div class="grid2">
       <a class="item" href="male-menopause.html" data-k="남성 갱년기"><img src="../images/col-male-menopause.jpg" alt="" loading="lazy"><span><small>남성 갱년기</small>의욕이 떨어지고 쉽게 지친다면, 남성 갱년기 한방 관리</span></a>
@@ -1862,7 +1869,7 @@
       <a class="item" href="nocturia.html" data-k="야간뇨 밤에 소변 잦은 소변 밤에 소변 소변 자주"><img src="../images/col-nocturia.jpg" alt="" loading="lazy"><span><small>야간뇨</small>밤에 소변 때문에 자꾸 깬다면, 야간뇨 원인 확인과 한방 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-14">
+  <section class="cat" id="cat-14" hidden>
     <h2>소아 <small>23편</small></h2>
     <div class="grid2">
       <a class="item" href="child-tonic.html" data-k="아이 보약 소아 보약 성장기 보약 소아 한의원 보약 녹용 어린이 한약"><img src="../images/col-child-tonic.jpg" alt="" loading="lazy"><span><small>아이 보약</small>아이가 자주 지치고 입이 짧다면, 아이 보약이 필요한 때와 한방 관리</span></a>
@@ -1890,7 +1897,7 @@
       <a class="item" href="student-fatigue.html" data-k="수험생 체력·집중력"><img src="../images/col-student-fatigue.jpg" alt="" loading="lazy"><span><small>수험생 체력·집중력</small>공부할수록 지치고 집중이 안 된다면, 수험생 체력·집중력 관리</span></a>
     </div>
   </section>
-  <section class="cat" id="cat-15">
+  <section class="cat" id="cat-15" hidden>
     <h2>체질·만성질환 <small>21편</small></h2>
     <div class="grid2">
       <a class="item" href="tonic-herbs.html" data-k="보약 기력 회복 기운 없음 체질 보약 보약 기력"><img src="../images/col-tonic-herbs.jpg" alt="" loading="lazy"><span><small>보약·기력 저하</small>기운이 없고 쉽게 지친다면, 보약이 필요한 몸과 한방 관리</span></a>
@@ -1918,39 +1925,30 @@
   </section>
 <script>
 (function(){
-  var links=document.querySelectorAll('.cat-nav a'), secs=document.querySelectorAll('.cat'), items=document.querySelectorAll('.cat .item');
+  var MAP={"cat-1": "cat-neck-shoulder.html", "cat-2": "cat-back.html", "cat-3": "cat-joint.html", "cat-4": "cat-accident.html", "cat-5": "cat-head-nerve.html", "cat-6": "cat-mind.html", "cat-7": "cat-digestive.html", "cat-8": "cat-ear.html", "cat-9": "cat-ent.html", "cat-10": "cat-skin.html", "cat-11": "cat-women.html", "cat-12": "cat-pregnancy.html", "cat-13": "cat-men.html", "cat-14": "cat-children.html", "cat-15": "cat-chronic.html"};
+  var h=location.hash.slice(1); if(MAP[h]){ location.replace(MAP[h]); return; }
+  var secs=document.querySelectorAll('.cat'), items=document.querySelectorAll('.cat .item');
   var q=document.getElementById('q'), msg=document.getElementById('qmsg');
   function norm(t){ return (t||'').toLowerCase().replace(/[\s·()（）,.]/g,''); }
   items.forEach(function(a){ a._k=norm(a.textContent+' '+(a.dataset.k||'')); });
-  function show(id){
-    items.forEach(function(a){ a.hidden=false; });
-    secs.forEach(function(s){ s.hidden = !(id==='all' || s.id===id); });
-    links.forEach(function(a){ a.setAttribute('aria-current', a.dataset.cat===id ? 'true' : 'false'); });
-  }
   function search(){
     var t=norm(q.value);
     document.body.classList.toggle('searching', !!t);
-    if(!t){ msg.textContent=''; fromHash(); return; }
+    if(!t){ msg.textContent=''; secs.forEach(function(s){ s.hidden=true; }); return; }
     var n=0;
-    links.forEach(function(a){ a.setAttribute('aria-current', a.dataset.cat==='all' ? 'true' : 'false'); });
     secs.forEach(function(s){
       var c=0; s.querySelectorAll('.item').forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) c++; });
       s.hidden = c===0; n+=c;
     });
     msg.textContent = n ? '검색 결과 '+n+'편' : '찾는 칼럼이 없습니다. 증상이 궁금하시면 0507-1495-4600으로 전화 주세요.';
   }
-  links.forEach(function(a){
-    a.addEventListener('click', function(ev){
-      ev.preventDefault(); var id=a.dataset.cat; q.value=''; msg.textContent=''; document.body.classList.remove('searching'); show(id);
-      history.replaceState(null,'', id==='all' ? location.pathname : '#'+id);
-    });
-  });
   q.addEventListener('input', search);
-  function fromHash(){ var h=location.hash.slice(1); show(h && document.getElementById(h) ? h : 'all'); }
-  window.addEventListener('hashchange', function(){ q.value=''; msg.textContent=''; fromHash(); });
-  fromHash();
 })();
 </script>
+  <div class="blogbox">
+    <p>칼럼에 다 담지 못한 진료 이야기와 건강 정보는 원장님 네이버 블로그에서 볼 수 있습니다.</p>
+    <a href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그 보기</a>
+  </div>
   <section class="visit">
     <h2>진료 안내</h2>
     <dl>
