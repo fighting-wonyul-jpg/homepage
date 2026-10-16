@@ -10,7 +10,7 @@ CSS='''  .policy { margin: 10px 0 0; font-size: .82rem; }
 NAVER='''<script src="https://wcs.pstatic.net/wcslog.js"></script>
 <script>
 if(!wcs_add) var wcs_add = {};
-wcs_add["wa"] = "1284e5d119c14b0";
+wcs_add["wa"] = "1ce89e414942390";
 if(window.wcs) { wcs_do(); }
 </script>
 </body>'''
