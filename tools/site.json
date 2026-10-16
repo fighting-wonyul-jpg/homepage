@@ -71,7 +71,6 @@
     "trigeminal-neuralgia",
     "facial-palsy",
     "hemifacial-spasm",
-    "burning-mouth",
     "shingles",
     "postherpetic-neuralgia",
     "crps",
@@ -130,7 +129,6 @@
     "constipation",
     "hemorrhoids",
     "hiccups",
-    "halitosis",
     "hangover",
     "fatty-liver"
    ]
@@ -152,7 +150,6 @@
     "obesity",
     "underweight",
     "hypertension",
-    "hypotension",
     "diabetes",
     "hypothyroidism",
     "hyperthyroidism",
@@ -165,6 +162,7 @@
    "어지럼·귀",
    [
     "dizziness",
+    "hypotension",
     "bppv",
     "vestibular-neuritis",
     "meniere",
@@ -190,6 +188,8 @@
     "tonsillitis",
     "dry-mouth",
     "mouth-ulcer",
+    "halitosis",
+    "burning-mouth",
     "dry-eye",
     "eye-strain"
    ]
