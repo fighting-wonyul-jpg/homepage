@@ -17,11 +17,17 @@ def page(slug):
 def card(x):
     h1,img,ks=page(x); ks=ks+SYN.get(x,[])
     return f'      <a class="item" href="{x}.html" data-k="{html.escape(" ".join(ks),quote=True)}"><img src="../images/{img}" alt="" loading="lazy"><span><small>{html.escape(LABEL[x])}</small>{h1}</span></a>'
-CP=S['cat_pages']
-def catcard(n,ss):
-    sample=' · '.join(html.escape(LABEL[x].split('(')[0]) for x in ss[:3])
-    return f'    <a class="catcard" href="{CP[n][0]}.html"><b>{html.escape(n)}</b><small>{len(ss)}편</small><span>{sample}</span></a>'
-grid="\n".join(catcard(n,ss) for n,ss in CAT)
+G=S['groups']; CATD=dict(CAT); SUBI=S['sub_intro']
+CI={n:i for i,(n,_) in enumerate(CAT,1)}          # 소분류 번호: 분류 페이지 안의 #c1~#c15
+GOF={n:g for g in G for n in g[3]}                # 소분류 → 대분류
+def gcount(g): return sum(len(CATD[n]) for n in g[3])
+def sublink(n):
+    g=GOF[n]; return g[1]+'.html'+(f'#c{CI[n]}' if len(g[3])>1 else '')
+def catcard(g):
+    subs=g[3]
+    sample=' · '.join(html.escape(n) for n in subs) if len(subs)>1 else ' · '.join(html.escape(LABEL[x].split('(')[0]) for x in CATD[subs[0]][:4])
+    return f'    <a class="catcard" href="{g[1]}.html"><b>{html.escape(g[0])}</b><small>{gcount(g)}편</small><span>{sample}</span></a>'
+grid="\n".join(catcard(g) for g in G)
 import datetime
 _m=datetime.date.today().month
 NOW='spring' if 3<=_m<=5 else 'summer' if 6<=_m<=8 else 'autumn' if 9<=_m<=11 else 'winter'
@@ -74,9 +80,9 @@ TOP=f'''  <p class="cat-label">요즘 많이 찾는 칼럼</p>
   q.addEventListener('input', search);
 })();
 </script>
-'''.replace('{CATMAP}',json.dumps({f'cat-{i}':CP[n][0]+'.html' for i,(n,_) in enumerate(CAT,1)}))
-CSS='''  .catgrid { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); margin: 0 0 8px; }
-  @media (min-width: 640px) { .catgrid { grid-template-columns: repeat(3, 1fr); } }
+'''.replace('{CATMAP}',json.dumps({f'cat-{i}':sublink(n) for i,(n,_) in enumerate(CAT,1)}))
+CSS='''  .catgrid { display: grid; gap: 10px; grid-template-columns: 1fr; margin: 0 0 8px; }
+  @media (min-width: 640px) { .catgrid { grid-template-columns: repeat(2, 1fr); } }
   .catcard { display: block; padding: 14px 14px 12px; border: 1px solid var(--line); border-left: 4px solid var(--brand); border-radius: 14px; background: var(--bg); color: var(--text); text-decoration: none; line-height: 1.45; }
   .catcard:hover { border-color: var(--brand); }
   .catcard b { display: block; font-size: 1rem; }
@@ -87,6 +93,10 @@ CSS='''  .catgrid { display: grid; gap: 10px; grid-template-columns: repeat(2, 1
   .cat-chips a { display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); text-decoration: none; font-size: .85rem; font-weight: 600; background: var(--bg); }
   .cat-chips a[aria-current="page"] { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
   .back { display: inline-block; margin: 4px 0 18px; font-weight: 700; text-decoration: none; }
+  .sub { margin-top: 26px; }
+  .sub h2 { margin: 0 0 6px; }
+  .sub h2 small { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: 4px; }
+  .sub-intro { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
 '''
 s=re.sub(r'  <div class="search">.*?</div>\n','',s,count=1,flags=re.S)
 a=s.index('  <p class="cat-label">')
@@ -104,15 +114,17 @@ def fix(o):
     elif isinstance(o,list):
         for v in o: fix(v)
 fix(ld); s=s[:m.start(2)]+json.dumps(ld,ensure_ascii=False,indent=2)+s[m.end(2):]
-if '.catgrid {' not in s: s=s.replace('</style>',CSS+'</style>',1)
+s=re.sub(r'  (?:\.catgrid|@media \(min-width: 640px\) \{ \.catgrid|\.catcard|\.searching \.catgrid|\.cat-chips|\.back \{|\.sub |\.sub-intro)[^\n]*\n','',s)
+s=s.replace('</style>',CSS+'</style>',1)
 open(COL+'index.html','w',encoding='utf-8').write(s)
 INDEX=s
 
 # ---- 분류 페이지 (column/cat-*.html): 칼럼 목록을 틀로 써서 분류별 목록을 만든다
 from _common import touch_sitemap
-def catpage(i,n,ss):
-    slug,intro=CP[n]; url=f'{BASE}column/{slug}.html'
-    title=f'인천 {n} 한의원 칼럼 | 365스마일한의원'; h1=f'{n} 칼럼'
+def catpage(g):
+    gname,slug,intro,subs=g; url=f'{BASE}column/{slug}.html'
+    ss=[x for n in subs for x in CATD[n]]
+    title=f'인천 {gname} 한의원 칼럼 | 365스마일한의원'; h1=f'{gname} 칼럼'
     desc=intro if len(intro)<=155 else intro[:intro.rfind('.',0,155)+1]
     t=INDEX
     t=re.sub(r'<title>.*?</title>',f'<title>{html.escape(title)}</title>',t,count=1)
@@ -124,47 +136,72 @@ def catpage(i,n,ss):
     t=re.sub(r'(<meta property="og:image" content=")[^"]*',lambda m:m.group(1)+BASE+'images/'+page(ss[0])[1],t,count=1)
     m=re.search(r'(<script type="application/ld\+json">\n)(.*?)(\n</script>)',t,re.S); ld=json.loads(m.group(2))
     ld['name']=h1; ld['url']=url; ld['description']=desc
-    ld['breadcrumb']={"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"건강 칼럼","item":f"{BASE}column/"},{"@type":"ListItem","position":2,"name":n,"item":url}]}
+    ld['breadcrumb']={"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"건강 칼럼","item":f"{BASE}column/"},{"@type":"ListItem","position":2,"name":gname,"item":url}]}
     ld['mainEntity']={"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":j,"url":f"{BASE}column/{x}.html","name":html.unescape(page(x)[0])} for j,x in enumerate(ss,1)]}
     t=t[:m.start(2)]+json.dumps(ld,ensure_ascii=False,indent=2)+t[m.end(2):]
-    chips="\n".join(f'    <li><a href="{CP[nn][0]}.html"'+(' aria-current="page"' if nn==n else '')+f'>{html.escape(nn)}</a></li>' for nn,_ in CAT)
-    body=f'''  <p class="crumb"><a href="./">건강 칼럼</a> · {html.escape(n)}</p>
-  <h1>{html.escape(h1)} <small style="font-size:.55em;color:var(--muted)">{len(ss)}편</small></h1>
-  <p class="lead-p">{html.escape(intro)}</p>
-  <a class="back" href="./">← 전체 분류 보기</a>
-  <div class="grid2">
-'''+"\n".join(card(x) for x in ss)+f'''
-  </div>
-  <p class="cat-label">다른 분류 보기</p>
-  <ul class="cat-chips">
-{chips}
-  </ul>
-'''
+    others="\n".join(f'    <li><a href="{gg[1]}.html"'+(' aria-current="page"' if gg is g else '')+f'>{html.escape(gg[0])}</a></li>' for gg in G)
+    body=(f'  <p class="crumb"><a href="./">건강 칼럼</a> · {html.escape(gname)}</p>\n'
+          f'  <h1>{html.escape(h1)} <small style="font-size:.55em;color:var(--muted)">{len(ss)}편</small></h1>\n'
+          f'  <p class="lead-p">{html.escape(intro)}</p>\n'
+          '  <a class="back" href="./">← 전체 분류 보기</a>\n')
+    if len(subs)>1:
+        body+='  <ul class="cat-nav sub-chips">\n'+f'    <li><a href="#" data-s="all" aria-current="true">전체<small>{len(ss)}</small></a></li>\n'
+        body+="\n".join(f'    <li><a href="#c{CI[n]}" data-s="c{CI[n]}">{html.escape(n)}<small>{len(CATD[n])}</small></a></li>' for n in subs)+'\n  </ul>\n'
+        for n in subs:
+            body+=(f'  <section class="sub" id="c{CI[n]}">\n'
+                   f'    <h2>{html.escape(n)} <small>{len(CATD[n])}편</small></h2>\n'
+                   f'    <p class="sub-intro">{html.escape(SUBI[n])}</p>\n'
+                   '    <div class="grid2">\n'+"\n".join(card(x) for x in CATD[n])+'\n    </div>\n  </section>\n')
+        body+=SUBJS
+    else:
+        body+='  <div class="grid2">\n'+"\n".join(card(x) for x in ss)+'\n  </div>\n'
+    body+='  <p class="cat-label">다른 분류 보기</p>\n  <ul class="cat-chips">\n'+others+'\n  </ul>\n'
     a=t.index('  <p class="crumb">'); b=t.index('</script>',t.index('<script>',t.index('<section class="cat"')))+len('</script>\n')
     t=t[:a]+body+t[b:]
     t=re.sub(r'  <div class="search">.*?</div>\n','',t,count=1,flags=re.S)
-    t=t.replace(' aria-label="365스마일한의원 건강 칼럼 홈"',' aria-label="365스마일한의원 건강 칼럼 홈"',1)
     open(COL+slug+'.html','w',encoding='utf-8').write(t)
     return slug
-made=[catpage(i,n,ss) for i,(n,ss) in enumerate(CAT,1)]
+SUBJS="""<script>
+(function(){
+  var chips=document.querySelectorAll('.sub-chips a'), secs=document.querySelectorAll('.sub');
+  function show(id){
+    secs.forEach(function(s){ s.hidden = !(id==='all' || s.id===id); });
+    chips.forEach(function(a){ a.setAttribute('aria-current', a.dataset.s===id ? 'true' : 'false'); });
+  }
+  chips.forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault(); var id=a.dataset.s; show(id);
+      history.replaceState(null,'', id==='all' ? location.pathname : '#'+id);
+    });
+  });
+  function fromHash(){ var h=location.hash.slice(1); show(h && document.getElementById(h) ? h : 'all'); }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+})();
+</script>
+"""
+made=[catpage(g) for g in G]
 for f in os.listdir(COL):
     if f.startswith('cat-') and f[:-5] not in made: os.remove(COL+f)
 sm=open(os.path.join(os.path.dirname(COL.rstrip(os.sep)),'sitemap.xml'),encoding='utf-8').read()
 touch_sitemap([x for x in made if f'column/{x}.html' not in sm])
+smp=os.path.join(os.path.dirname(COL.rstrip(os.sep)),'sitemap.xml'); sm=open(smp,encoding='utf-8').read()
+sm2=re.sub(r'\s*<url><loc>[^<]*/column/(cat-[a-z-]+)\.html</loc>.*?</url>',lambda m:m.group(0) if m.group(1) in made else '',sm)
+if sm2!=sm: open(smp,'w',encoding='utf-8').write(sm2)
 
 # ---- 칼럼 위치 표시: 건강 칼럼 · 분류 · 칼럼
 CATOF={x:n for n,ss in CAT for x in ss}
 from _common import write
 for x in allslugs:
-    p0=read(x); n=CATOF[x]; cs=CP[n][0]
-    p1=re.sub(r'<p class="crumb"><a href="\./">건강 칼럼</a> · (?:<a href="cat-[a-z-]+\.html">[^<]*</a> · )?',f'<p class="crumb"><a href="./">건강 칼럼</a> · <a href="{cs}.html">{html.escape(n)}</a> · ',p0,count=1)
+    p0=read(x); n=CATOF[x]; g=GOF[n]; cs=g[1]
+    p1=re.sub(r'<p class="crumb"><a href="\./">건강 칼럼</a> · (?:<a href="cat-[a-z-]+\.html(?:#c\d+)?">[^<]*</a> · )?',f'<p class="crumb"><a href="./">건강 칼럼</a> · <a href="{sublink(n)}">{html.escape(n)}</a> · ',p0,count=1)
     def bc(m):
         o=json.loads(m.group(2)); ch=[False]
         def walk(v):
             if isinstance(v,dict):
                 if v.get('@type')=='BreadcrumbList':
                     it=[e for e in v['itemListElement'] if '/cat-' not in str(e.get('item',''))]
-                    it.insert(1,{"@type":"ListItem","position":2,"name":n,"item":f"{BASE}column/{cs}.html"})
+                    it.insert(1,{"@type":"ListItem","position":2,"name":g[0],"item":f"{BASE}column/{cs}.html"})
                     for k,e in enumerate(it,1): e['position']=k
                     v['itemListElement']=it; ch[0]=True
                 for vv in v.values(): walk(vv)
