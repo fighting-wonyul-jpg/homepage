@@ -6,13 +6,14 @@ from _common import COL, BASE, site, column_slugs
 p=COL+'doctor.html'; s=open(p,encoding='utf-8').read()
 DOC=BASE+'column/doctor.html'
 cats=site()['categories']; total=len(column_slugs())
-areas="\n".join(f'    <li><a href="{[g[1] for g in site()["groups"] if n in g[3]][0]}.html'+(f'#c{i}' if len([g for g in site()["groups"] if n in g[3]][0][3])>1 else '')+f'">{html.escape(n)}</a></li>' for i,(n,_) in enumerate(cats,1))
+areas="\n".join(f'    <li><a href="{g[1]}.html">{html.escape(g[0])}</a></li>' for g in site()['groups'])
 CAREER=['임상 경력 15년','현재 한의원(인천 서구 가정동)에서 개원 후 10년째 진료','FCST 턱관절학회','연부조직학회','침도학회','복지학회','동의방약학회']
 GROUPS=[('소화기',[('만성 소화불량','chronic-dyspepsia'),('위염','gastritis'),('담적병','damjeok'),('역류성 식도염','reflux-esophagitis'),('과민성대장증후군','ibs')]),
  ('신경정신계',[('두통','headache'),('어지럼증','dizziness'),('메니에르병','meniere'),('불면증','insomnia'),('화병','hwabyung'),('공황장애','panic-disorder'),('불안장애','anxiety-disorder'),('틱장애','tic-disorder')]),
  ('안면',[('안면마비(구안와사)','facial-palsy'),('삼차신경통','trigeminal-neuralgia'),('얼굴 떨림','hemifacial-spasm')]),
  ('피부',[('여드름','acne'),('두드러기','urticaria'),('습진','eczema'),('지루성피부염','seborrheic-dermatitis'),('아토피','atopic-dermatitis')]),
- ('여성·전신',[('생리통','menstrual-pain'),('무월경','amenorrhea'),('갱년기 홍조','menopause'),('다한증','hyperhidrosis'),('부정맥','arrhythmia')])]
+ ('여성',[('생리통','menstrual-pain'),('무월경','amenorrhea'),('갱년기 홍조','menopause')]),
+ ('전신',[('다한증','hyperhidrosis'),('부정맥','arrhythmia')])]
 HERB_ROWS="\n".join(f'    <tr><th>{g}</th><td>'+', '.join(f'<a href="{u}.html">{n}</a>' for n,u in xs)+'</td></tr>' for g,xs in GROUPS)
 BODY=f'''<article>
   <p class="crumb"><a href="./">건강 칼럼</a> · 원장 소개</p>
@@ -30,9 +31,6 @@ BODY=f'''<article>
     <p>안녕하세요. 인천 가정동 365스마일한의원 대표원장 문원열입니다. 15년 동안 환자분들을 진료해 왔고, 가정동 한자리에서 10년째 진료하고 있습니다.</p>
     <p>진료실에 들어오시는 분들의 첫마디에는 짙은 피로와 체념이 배어 있을 때가 많습니다. 수개월, 길게는 수년 동안 디스크와 협착증으로 다리 저림을 견뎌 오신 분, 오래된 내과·신경계 질환으로 일상이 무너진 분들입니다.</p>
   </div>
-
-  <h2>나도 아파 봤기에</h2>
-  <p>저 역시 한의사가 된 뒤 부정맥과 두드러기로 일상생활이 힘들 만큼 아팠던 적이 있습니다. 아무리 쉬어도 회복되지 않던 그때, 저를 다시 일으켜 세운 것은 체질에 맞춘 한약이었습니다. 몸이 무너지는 경험을 해 보았기에, 환자 한 분 한 분의 간절함을 가볍게 여기지 않습니다.</p>
 
   <h2>겉과 속을 함께 치료합니다</h2>
   <blockquote class="quote">
