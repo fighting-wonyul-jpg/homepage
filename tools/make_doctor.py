@@ -5,13 +5,14 @@ from _common import COL, BASE, site, column_slugs
 p=COL+'doctor.html'; s=open(p,encoding='utf-8').read()
 DOC=BASE+'column/doctor.html'
 cats=site()['categories']; total=len(column_slugs())
-areas="\n".join(f'    <li><a href="{[g[1] for g in site()["groups"] if n in g[3]][0]}.html'+(f'#c{i}' if len([g for g in site()["groups"] if n in g[3]][0][3])>1 else '')+f'">{html.escape(n)}</a></li>' for i,(n,_) in enumerate(cats,1))
+areas="\n".join(f'    <li><a href="{g[1]}.html">{html.escape(g[0])}</a></li>' for g in site()['groups'])
 CAREER=['임상 경력 15년','현재 한의원(인천 서구 가정동)에서 개원 후 10년째 진료','FCST 턱관절학회','연부조직학회','침도학회','복지학회','동의방약학회']
 GROUPS=[('소화기',[('만성 소화불량','chronic-dyspepsia'),('위염','gastritis'),('담적병','damjeok'),('역류성 식도염','reflux-esophagitis'),('과민성대장증후군','ibs')]),
  ('신경정신계',[('두통','headache'),('어지럼증','dizziness'),('메니에르병','meniere'),('불면증','insomnia'),('화병','hwabyung'),('공황장애','panic-disorder'),('불안장애','anxiety-disorder'),('틱장애','tic-disorder')]),
  ('안면',[('안면마비(구안와사)','facial-palsy'),('삼차신경통','trigeminal-neuralgia'),('얼굴 떨림','hemifacial-spasm')]),
  ('피부',[('여드름','acne'),('두드러기','urticaria'),('습진','eczema'),('지루성피부염','seborrheic-dermatitis'),('아토피','atopic-dermatitis')]),
- ('여성·전신',[('생리통','menstrual-pain'),('무월경','amenorrhea'),('갱년기 홍조','menopause'),('다한증','hyperhidrosis'),('부정맥','arrhythmia')])]
+ ('여성',[('생리통','menstrual-pain'),('무월경','amenorrhea'),('갱년기 홍조','menopause')]),
+ ('전신',[('다한증','hyperhidrosis'),('부정맥','arrhythmia')])]
 HERB_ROWS="\n".join(f'    <tr><th>{g}</th><td>'+', '.join(f'<a href="{u}.html">{n}</a>' for n,u in xs)+'</td></tr>' for g,xs in GROUPS)
 BODY=f'''<article>
   <p class="crumb"><a href="./">건강 칼럼</a> · 원장 소개</p>
