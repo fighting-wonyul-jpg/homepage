@@ -31,6 +31,7 @@ def finish(slug,*rel):
     s=read(slug)
     if 'class="blogbox"' not in s:
         i=s.index('<h2 id="treat"'); j=s.index('<h2',i+5); s=s[:j]+BOX+s[j:]
+    from apply_blogcard import apply as blogcard; s=blogcard(s)   # 블로그 안내 상자를 사진 카드로
     idx=open(COL+'index.html',encoding='utf-8').read()
     item={m.group(1):m.group(2) for m in re.finditer(r'<a class="item" href="([a-z0-9-]+)\.html"[^>]*>(.*?)</a>',idx)}
     cards="\n".join(f'      <a class="rel-card" href="{r}.html">{item[r]}</a>' for r in rel)
