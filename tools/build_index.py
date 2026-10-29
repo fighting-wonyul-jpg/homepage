@@ -244,4 +244,5 @@ for x in allslugs:
         return m.group(1)+json.dumps(o,ensure_ascii=False,indent=2)+m.group(3) if ch[0] else m.group(0)
     p1=re.sub(r'(<script type="application/ld\+json">\n)(.*?)(\n</script>)',bc,p1,flags=re.S)
     if p1!=p0: write(x,p1)
+from make_rss import build as make_rss; make_rss()   # 네이버 RSS(rss.xml)도 함께 갱신
 print(len(allslugs),'편,',len(CAT),'분류, 분류 페이지',len(made),'개')
