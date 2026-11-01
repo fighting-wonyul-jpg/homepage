@@ -33,6 +33,8 @@
 
 ## 새 칼럼 만드는 법
 
+칼럼 키워드 문구는 "인천 서구 가정동·청라 ○○ 한의원"입니다(원장님 요청 2026-11-01). 검색 결과 제목, 맨 위 위치 표시, BreadcrumbList, 메타 키워드에 들어가며 `new_column.py shell`이 자동으로 넣습니다.
+
 1. 셸 만들기: `python3 tools/new_column.py shell <slug> <키워드> "<제목>" "<메타 키워드>" "<표지 설명>" [--from <비슷한 칼럼 slug>]`
 2. 본문: `tools/content/example_chest_pain.py`를 복사해 `tools/content/<slug>.py`로 작성하고 실행합니다. 출력 글자 수는 4,000~5,000자 정도이고, desc(검색 설명)는 155자 이하로 씁니다.
 3. 중복 문장 검사: `python3 tools/dupcheck.py <slug>`. 다른 칼럼과 겹치는 본문 문장은 고쳐 씁니다.
