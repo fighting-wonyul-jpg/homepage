@@ -18,8 +18,8 @@ BOX=f'''<div class="blogbox">
 def shell(slug,kw,title,keys,alt,src='arrhythmia'):
     s=read(src)
     old_t=re.search(r'<h1>(.*?)</h1>',s).group(1)
-    old_kw=re.search(r'<p class="crumb"><a href="\./">건강 칼럼</a> · (.*?)</p>',s).group(1)
-    s=s.replace(old_t,title).replace(src+'.html',slug+'.html').replace(f'col-{src}.jpg',f'col-{slug}.jpg').replace(old_kw,f'인천 {kw} 한의원')
+    old_kw=re.search(r'<p class="crumb">.*</a> · ([^<]+)</p>',s).group(1)
+    s=s.replace(old_t,title).replace(src+'.html',slug+'.html').replace(f'col-{src}.jpg',f'col-{slug}.jpg').replace(old_kw,f'인천 서구 가정동·청라 {kw} 한의원')
     s=re.sub(r'<meta name="keywords" content="[^"]*">',f'<meta name="keywords" content="{html.escape(keys,quote=True)}">',s)
     s=re.sub(r'<img class="cover" src="([^"]+)" alt="[^"]*">',lambda m:f'<img class="cover" src="{m.group(1)}" alt="{html.escape(alt,quote=True)}">',s)
     d=datetime.date.today()
