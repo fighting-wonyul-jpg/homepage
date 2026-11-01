@@ -128,7 +128,7 @@ from _common import touch_sitemap
 def catpage(g):
     gname,slug,intro,subs=g; url=f'{BASE}column/{slug}.html'
     ss=[x for n in subs for x in CATD[n]]
-    title=f'인천 서구 가정동·청라 {gname} 한의원 칼럼 | 365스마일한의원'; h1=f'{gname} 칼럼'
+    title=f'{gname} 칼럼 | 인천 서구 가정동·청라 {gname} 한의원'; h1=f'{gname} 칼럼'
     desc=intro if len(intro)<=155 else intro[:intro.rfind('.',0,155)+1]
     t=INDEX
     t=re.sub(r'<title>.*?</title>',f'<title>{html.escape(title)}</title>',t,count=1)
