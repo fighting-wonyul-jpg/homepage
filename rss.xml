@@ -6,7 +6,14 @@
   <atom:link href="https://column.smileclinics.net/rss.xml" rel="self" type="application/rss+xml"/>
   <description>인천 서구 가정동 365스마일한의원 문원열 대표원장이 증상별 원인과 한방 치료, 생활 관리법을 정리한 건강 칼럼입니다.</description>
   <language>ko</language>
-  <lastBuildDate>Sun, 01 Nov 2026 09:00:00 +0900</lastBuildDate>
+  <lastBuildDate>Mon, 02 Nov 2026 09:00:00 +0900</lastBuildDate>
+  <item>
+    <title>배가 부풀고 방귀·대변이 멈췄다면, 장폐색 응급 신호와 회복기 관리</title>
+    <link>https://column.smileclinics.net/column/bowel-obstruction.html</link>
+    <guid isPermaLink="true">https://column.smileclinics.net/column/bowel-obstruction.html</guid>
+    <description>배가 점점 부풀고 토하며 방귀·대변이 멈췄다면 장폐색일 수 있어 바로 응급실로 가야 합니다. 응급 신호와 원인, 병원 치료가 끝난 뒤 회복기와 재발 예방 관리를 정리했습니다.</description>
+    <pubDate>Mon, 02 Nov 2026 09:00:00 +0900</pubDate>
+  </item>
   <item>
     <title>피부에 하얀 반점이 번진다면, 백반증의 원인과 한방 관리</title>
     <link>https://column.smileclinics.net/column/vitiligo.html</link>
@@ -348,13 +355,6 @@
     <link>https://column.smileclinics.net/column/uterine-fibroids.html</link>
     <guid isPermaLink="true">https://column.smileclinics.net/column/uterine-fibroids.html</guid>
     <description>생리량이 부쩍 늘고 아랫배가 묵직하거나 소변이 잦아졌다면 자궁근종을 확인할 때입니다. 인천 서구 365스마일한의원이 자궁근종의 종류와 산부인과 초음파 확인, 과다출혈·빈혈·급성 통증 같은 위험 신호, 한의학의 징가와 유형, 침·약침·한약으로 하는 증상 관리를 정리했습니다.</description>
-    <pubDate>Sun, 01 Nov 2026 09:00:00 +0900</pubDate>
-  </item>
-  <item>
-    <title>갑자기 부풀어 오르는 가려운 피부, 두드러기 원인과 한방 치료</title>
-    <link>https://column.smileclinics.net/column/urticaria.html</link>
-    <guid isPermaLink="true">https://column.smileclinics.net/column/urticaria.html</guid>
-    <description>모기 물린 듯 부풀어 오른 붉은 발진이 생겼다 사라지기를 반복한다면 두드러기를 살펴볼 때입니다. 인천 서구 365스마일한의원이 두드러기의 원인과 형태, 응급 신호, 한의학의 은진과 네 가지 유형, 침·약침·한약 치료와 두드러기 일지 쓰는 법을 정리했습니다.</description>
     <pubDate>Sun, 01 Nov 2026 09:00:00 +0900</pubDate>
   </item>
 </channel>
