@@ -127,6 +127,7 @@
     "ibs",
     "chronic-diarrhea",
     "constipation",
+    "bowel-obstruction",
     "hemorrhoids",
     "hiccups",
     "hangover",
@@ -527,7 +528,8 @@
   "joint-replacement-rehab": "인공관절 수술 후 회복",
   "fracture-recovery": "골절 후 통증·회복",
   "muscle-strain": "운동 중 근육 손상",
-  "crps": "복합부위통증증후군(CRPS)"
+  "crps": "복합부위통증증후군(CRPS)",
+  "bowel-obstruction": "장폐색"
  },
  "synonyms": {
   "arrhythmia": [
@@ -665,6 +667,12 @@
   ],
   "crps": [
    "복합부위"
+  ],
+  "bowel-obstruction": [
+   "장폐쇄",
+   "장마비",
+   "장유착",
+   "장꼬임"
   ]
  },
  "seasonal": {

@@ -19,7 +19,8 @@ def shell(slug,kw,title,keys,alt,src='arrhythmia'):
     s=read(src)
     old_t=re.search(r'<h1>(.*?)</h1>',s).group(1)
     old_kw=re.search(r'<p class="crumb">.*</a> · ([^<]+)</p>',s).group(1)
-    s=s.replace(old_t,title).replace(src+'.html',slug+'.html').replace(f'col-{src}.jpg',f'col-{slug}.jpg').replace(old_kw,f'인천 서구 가정동·청라 {kw} 한의원')
+    s=s.replace(old_t,title).replace(f'col-{src}.jpg',f'col-{slug}.jpg').replace(old_kw,f'인천 서구 가정동·청라 {kw} 한의원')
+    s=re.sub(r'(?<![a-z0-9-])'+re.escape(src)+r'\.html',slug+'.html',s)   # 다른 칼럼 주소 안의 같은 글자(예: child-constipation)는 건드리지 않음
     s=re.sub(r'<meta name="keywords" content="[^"]*">',f'<meta name="keywords" content="{html.escape(keys,quote=True)}">',s)
     s=re.sub(r'<img class="cover" src="([^"]+)" alt="[^"]*">',lambda m:f'<img class="cover" src="{m.group(1)}" alt="{html.escape(alt,quote=True)}">',s)
     d=datetime.date.today()
