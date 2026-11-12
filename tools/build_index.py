@@ -244,5 +244,31 @@ for x in allslugs:
         return m.group(1)+json.dumps(o,ensure_ascii=False,indent=2)+m.group(3) if ch[0] else m.group(0)
     p1=re.sub(r'(<script type="application/ld\+json">\n)(.*?)(\n</script>)',bc,p1,flags=re.S)
     if p1!=p0: write(x,p1)
+# ---- 다른 칼럼으로 합쳐진 옛 주소: 새 칼럼으로 넘기는 이동 페이지와 사이트맵 정리 (site.json의 redirects)
+from _common import redirects
+RD=redirects()
+for old,new in RD.items():
+    url=f'{BASE}column/{new}.html'
+    stub=f'''<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(LABEL.get(new,new))} 칼럼으로 이동합니다 | 365스마일한의원</title>
+<link rel="canonical" href="{url}">
+<meta http-equiv="refresh" content="0; url={new}.html">
+<script>location.replace("{new}.html" + location.hash);</script>
+</head>
+<body>
+<p>이 칼럼은 <a href="{new}.html">{html.escape(LABEL.get(new,new))} 칼럼</a>으로 합쳐졌습니다.</p>
+</body>
+</html>
+'''
+    fp=COL+old+'.html'
+    if not os.path.exists(fp) or open(fp,encoding='utf-8').read()!=stub: open(fp,'w',encoding='utf-8').write(stub)
+if RD:
+    smp=os.path.join(os.path.dirname(COL.rstrip(os.sep)),'sitemap.xml'); sm=open(smp,encoding='utf-8').read()
+    sm2=re.sub(r'\s*<url><loc>[^<]*/column/([a-z0-9-]+)\.html</loc>.*?</url>',lambda m:'' if m.group(1) in RD else m.group(0),sm)
+    if sm2!=sm: open(smp,'w',encoding='utf-8').write(sm2)
 from make_rss import build as make_rss; make_rss()   # 네이버 RSS(rss.xml)도 함께 갱신
 print(len(allslugs),'편,',len(CAT),'분류, 분류 페이지',len(made),'개')

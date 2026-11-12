@@ -18,6 +18,8 @@
 - `column/ga.js`: 구글 애널리틱스(G-650CYRNZYH)와 클릭 기록. 이벤트: click_booking, click_kakao, click_call, click_map, click_blog, click_youtube (link_location: mobile_bar, pc_quick, header, visit_info, bottom_buttons, blog_box, author_box), search(search_term), checklist_result(checked), share(method). 모든 페이지 `<head>`에 들어감. 네이버 애널리틱스(wa 1ce89e414942390)는 `</body>` 바로 앞 (둘 다 `tools/apply_analytics.py`).
 - `images/col-<slug>.jpg`: 칼럼 표지 (1600x900). `images/logo-*.png`: 로고.
 - `sitemap.xml`: 칼럼 목록, 원장 소개, 칼럼 전체. `robots.txt`가 사이트맵 위치를 알려 줍니다. `rss.xml`(루트, 최근 쓰거나 고친 칼럼 50편)은 네이버 서치어드바이저 RSS 제출용이며 `build_index.py`가 `tools/make_rss.py`로 함께 갱신합니다.
+- 합쳐진 칼럼: `tools/site.json`의 `redirects`({옛 slug: 새 slug})에 넣으면 `build_index.py`가 옛 주소를 새 칼럼으로 넘기는 이동 페이지로 만들고 사이트맵에서 뺍니다(옛 파일은 지우지 말 것). 2026-11-12 원장님 요청으로 ankle-instability→ankle-sprain, postpartum-joint-pain→postpartum을 합치고 내용은 새 칼럼에 섹션으로 옮김.
+- 내원 안내(`.area`) 문단은 짧게 유지합니다(동네 이름 나열 금지, 2026-11-12): "365스마일한의원은 인천 서구 가정동, 인천2호선 가정중앙시장역 인근에 있습니다. 서구(서해구)·검단·청라·루원시티와 계양·부평에서도 오시기 편합니다."
 - `tools/site.json`: 소분류 16개(categories), 대분류 9개(groups), 많이 찾는 칼럼, 칼럼별 짧은 이름(labels), 검색 동의어. **분류를 바꾸면 여기를 고치고 build_index.py 실행.**
 - 루트 `index.html`, `install.html`: 예전 홈페이지와 앱 설치 주소(QR 포함)를 칼럼 목록으로 넘기는 이동 페이지입니다. 지우지 마세요.
 - `sw.js`: 예전에 앱으로 설치한 휴대폰의 캐시를 지우는 정리용입니다. 지우지 마세요.

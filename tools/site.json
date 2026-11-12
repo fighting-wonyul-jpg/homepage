@@ -49,7 +49,6 @@
     "pes-anserine",
     "baker-cyst",
     "ankle-sprain",
-    "ankle-instability",
     "fracture-recovery",
     "achilles",
     "plantar-fasciitis",
@@ -225,7 +224,6 @@
     "pregnancy-edema",
     "pregnancy-back-pain",
     "postpartum",
-    "postpartum-joint-pain",
     "postpartum-depression",
     "postpartum-hair-loss"
    ]
@@ -506,14 +504,12 @@
   "seasonal-cold": "환절기 감기 몸살",
   "thoracic-outlet": "흉곽출구증후군",
   "ankylosing-spondylitis": "강직성척추염",
-  "ankle-instability": "발목 불안정증",
   "baker-cyst": "베이커낭종(오금 물혹)",
   "vestibular-neuritis": "전정신경염",
   "lpr": "인후두역류",
   "dermatographism": "피부묘기증",
   "menstrual-migraine": "생리 편두통",
   "pregnancy-back-pain": "임신 중 허리통증",
-  "postpartum-joint-pain": "산후 관절통(산후풍)",
   "preconception": "임신 준비",
   "postpartum-hair-loss": "출산 후 탈모",
   "nocturia": "야간뇨",
@@ -608,10 +604,6 @@
    "밤에 소변",
    "소변 자주"
   ],
-  "postpartum-joint-pain": [
-   "산후풍",
-   "손목"
-  ],
   "lpr": [
    "목 이물감",
    "헛기침"
@@ -673,6 +665,15 @@
    "장마비",
    "장유착",
    "장꼬임"
+  ],
+  "ankle-sprain": [
+   "발목 불안정증",
+   "자주 삐는 발목"
+  ],
+  "postpartum": [
+   "산후 관절통",
+   "산후 손목",
+   "드퀘르뱅"
   ]
  },
  "seasonal": {
@@ -800,5 +801,9 @@
   "소아": "성장, 비염, 잦은 감기, 식욕부진, 야뇨, 틱, 아토피처럼 아이들이 자주 겪는 증상을 모았습니다. 아이에게는 약침을 쓰지 않고 피부에 붙이는 소아 스티커침을 쓰며, 한약은 쓴맛이 덜한 약재 위주로 처방합니다. 집에서 단것을 조금 타서 먹여도 되지만, 돌이 지나지 않은 아기에게는 꿀을 타지 마세요.",
   "기력·만성질환": "만성피로, 기력 저하, 면역력 저하, 수험생 체력, 수족냉증, 고혈압, 당뇨, 갑상선 질환, 골다공증처럼 오래 관리해야 하는 몸 상태를 다룬 칼럼입니다. 자율신경·체성분·혈액 검사로 몸 상태를 확인하고, 원장이 원내 탕전실에서 직접 달인 한약을 10일분씩 처방해 경과에 따라 조절합니다. 혈압약·당뇨약·갑상선약은 담당 의사와 상의 없이 끊지 마세요.",
   "다이어트": "비만과 뱃살, 갱년기·산후 체중 증가, 소아 비만, 살이 안 찌는 저체중처럼 체중 고민을 다룬 칼럼입니다. 체성분 검사로 근육과 지방 상태를 확인하고, 체질에 맞춘 한약을 10일분씩 처방해 경과를 보며 조절합니다. 몇 kg을 약속하기보다 식사·수면·운동 습관을 함께 바로잡는 것을 목표로 하며, 한약 복용 중 두근거림이나 잠들기 어려움이 생기면 바로 알려 주세요."
+ },
+ "redirects": {
+  "ankle-instability": "ankle-sprain",
+  "postpartum-joint-pain": "postpartum"
  }
 }
