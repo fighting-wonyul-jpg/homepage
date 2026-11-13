@@ -118,7 +118,7 @@ def fix(o):
     elif isinstance(o,list):
         for v in o: fix(v)
 fix(ld); s=s[:m.start(2)]+json.dumps(ld,ensure_ascii=False,indent=2)+s[m.end(2):]
-s=re.sub(r'  (?:\.catgrid|@media \(min-width: 640px\) \{ \.catgrid|\.catcard|\.searching \.catgrid|\.cat-chips|\.back \{|\.sub |\.sub-intro)[^\n]*\n','',s)
+s=re.sub(r'  (?:\.catgrid|@media \(min-width: 640px\) \{ \.catgrid|\.catcard|\.searching \.catgrid|\.cat-chips|\.back \{|\.sub |\.sub-intro|\.qon )[^\n]*\n','',s)
 s=s.replace('</style>',CSS+'</style>',1)
 open(COL+'index.html','w',encoding='utf-8').write(s)
 INDEX=s
@@ -270,5 +270,6 @@ if RD:
     smp=os.path.join(os.path.dirname(COL.rstrip(os.sep)),'sitemap.xml'); sm=open(smp,encoding='utf-8').read()
     sm2=re.sub(r'\s*<url><loc>[^<]*/column/([a-z0-9-]+)\.html</loc>.*?</url>',lambda m:'' if m.group(1) in RD else m.group(0),sm)
     if sm2!=sm: open(smp,'w',encoding='utf-8').write(sm2)
-from make_rss import build as make_rss; make_rss()   # 네이버 RSS(rss.xml)도 함께 갱신
+from make_rss import build as make_rss; make_rss()
+from sync_sitemap import sync as sync_sitemap; sync_sitemap()   # 사이트맵 날짜를 실제 수정 날짜에 맞춤   # 네이버 RSS(rss.xml)도 함께 갱신
 print(len(allslugs),'편,',len(CAT),'분류, 분류 페이지',len(made),'개')
