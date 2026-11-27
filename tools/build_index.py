@@ -273,4 +273,5 @@ if RD:
 from make_rss import build as make_rss; make_rss()
 from sync_sitemap import sync as sync_sitemap; sync_sitemap()   # 사이트맵 날짜를 실제 수정 날짜에 맞춤   # 네이버 RSS(rss.xml)도 함께 갱신
 from apply_google_scope import apply as google_scope; google_scope()   # 구글 노출 범위(주력 칼럼)와 sitemap-google.xml
+from apply_entity_links import apply as entity_links; entity_links()   # 원장(Person)·한의원(MedicalClinic) @id 연결, 원장 소개 worksFor
 print(len(allslugs),'편,',len(CAT),'분류, 분류 페이지',len(made),'개')
