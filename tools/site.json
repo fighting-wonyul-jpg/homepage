@@ -65,7 +65,6 @@
    "두통·얼굴·신경",
    [
     "headache",
-    "cluster-headache",
     "tmj",
     "trigeminal-neuralgia",
     "facial-palsy",
@@ -85,10 +84,7 @@
   [
    "교통사고 후유증",
    [
-    "traffic-accident",
-    "whiplash",
-    "accident-headache",
-    "accident-insomnia"
+    "traffic-accident"
    ]
   ],
   [
@@ -198,7 +194,6 @@
    "여성 건강",
    [
     "menstrual-pain",
-    "menstrual-migraine",
     "pms",
     "ovulation-pain",
     "irregular-period",
@@ -255,7 +250,6 @@
     "child-snoring",
     "otitis-media",
     "child-nosebleed",
-    "child-headache",
     "infant-eczema",
     "child-atopic",
     "child-sweating",
@@ -345,7 +339,6 @@
   "trigeminal-neuralgia": "삼차신경통",
   "hemifacial-spasm": "안면경련",
   "tmj": "턱관절장애",
-  "cluster-headache": "군발두통",
   "burning-mouth": "구강작열증후군",
   "shingles": "대상포진",
   "postherpetic-neuralgia": "대상포진후신경통",
@@ -458,7 +451,6 @@
   "child-appetite": "소아 식욕부진",
   "child-abdominal-pain": "소아 반복성 복통",
   "child-constipation": "소아 변비",
-  "child-headache": "소아 두통",
   "child-nosebleed": "소아 코피",
   "child-sweating": "소아 다한(땀 많은 아이)",
   "child-obesity": "소아 비만",
@@ -485,14 +477,11 @@
   "heat-exhaustion": "더위 먹음",
   "cancer-recovery": "암 치료 후 회복",
   "rotator-cuff-tear": "회전근개 파열",
-  "whiplash": "교통사고 목 통증(편타손상)",
   "finger-arthritis": "손가락 관절염",
   "spondylolisthesis": "척추전방전위증",
   "meniscus-tear": "반월상연골 손상",
   "pes-anserine": "거위발건염",
   "piriformis": "이상근증후군",
-  "accident-headache": "교통사고 후 두통·어지럼",
-  "accident-insomnia": "교통사고 후 불면·불안",
   "menopause-diet": "갱년기 다이어트",
   "adenomyosis": "자궁선근증",
   "child-atopic": "소아 아토피",
@@ -508,7 +497,6 @@
   "vestibular-neuritis": "전정신경염",
   "lpr": "인후두역류",
   "dermatographism": "피부묘기증",
-  "menstrual-migraine": "생리 편두통",
   "pregnancy-back-pain": "임신 중 허리통증",
   "preconception": "임신 준비",
   "postpartum-hair-loss": "출산 후 탈모",
@@ -552,7 +540,13 @@
   "traffic-accident": [
    "자동차보험",
    "자보",
-   "교통사고"
+   "교통사고",
+   "목 염좌",
+   "편타손상",
+   "교통사고 두통",
+   "교통사고 어지럼",
+   "교통사고 불면",
+   "교통사고 불안"
   ],
   "obesity": [
    "다이어트",
@@ -563,19 +557,6 @@
   ],
   "child-obesity": [
    "다이어트"
-  ],
-  "whiplash": [
-   "교통사고",
-   "자보",
-   "목 염좌"
-  ],
-  "accident-headache": [
-   "교통사고",
-   "자보"
-  ],
-  "accident-insomnia": [
-   "교통사고",
-   "자보"
   ],
   "menopause-diet": [
    "다이어트",
@@ -674,6 +655,13 @@
    "산후 관절통",
    "산후 손목",
    "드퀘르뱅"
+  ],
+  "headache": [
+   "군발두통",
+   "생리 두통",
+   "월경 편두통",
+   "소아 두통",
+   "아이 두통"
   ]
  },
  "seasonal": {
@@ -804,7 +792,13 @@
  },
  "redirects": {
   "ankle-instability": "ankle-sprain",
-  "postpartum-joint-pain": "postpartum"
+  "postpartum-joint-pain": "postpartum",
+  "cluster-headache": "headache",
+  "menstrual-migraine": "headache",
+  "child-headache": "headache",
+  "whiplash": "traffic-accident",
+  "accident-headache": "traffic-accident",
+  "accident-insomnia": "traffic-accident"
  },
  "google_core": [
   "lumbar-disc",
@@ -821,9 +815,7 @@
   "tmj",
   "muscle-strain",
   "traffic-accident",
-  "whiplash",
   "headache",
-  "menstrual-migraine",
   "facial-palsy",
   "tic-disorder",
   "obesity",
