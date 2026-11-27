@@ -15,16 +15,16 @@ for f in sorted(os.listdir(COL)):
     if not f.endswith('.html'): continue
     p=COL+f; s=open(p,encoding='utf-8').read()
     if 'booking.naver.com' in s: continue
-    call='<a class="call" href="tel:0507-1495-4600">전화 예약</a>'
+    call='<a class="call" href="tel:032-575-4600">전화 예약</a>'
     assert s.count(call)==1,f
     s=s.replace(call,f'<span class="nav-r"><a class="book" {A}>네이버 예약</a>{call}<a class="hblog" href="https://m.blog.naver.com/kimyiho8787" target="_blank" rel="noopener">블로그</a></span>')
     s=s.replace('</style>',CSS,1)
     # 진료 안내: 전화 줄 다음에 예약 줄
-    t='<div><dt>전화</dt><dd><a href="tel:0507-1495-4600">0507-1495-4600</a></dd></div>'
+    t='<div><dt>전화</dt><dd><a href="tel:032-575-4600">032-575-4600</a></dd></div>'
     assert s.count(t)==1,f
     s=s.replace(t,t+f'\n      <div><dt>예약</dt><dd><a {A}>예약 바로가기</a> 또는 전화 예약</dd></div>')
     # 하단 버튼 줄
-    c='    <a class="btn btn-primary" href="tel:0507-1495-4600">전화로 상담 예약 0507-1495-4600</a>\n'
+    c='    <a class="btn btn-primary" href="tel:032-575-4600">전화로 상담 예약 032-575-4600</a>\n'
     assert s.count(c)==1,f
     s=s.replace(c,c+f'    <a class="btn btn-primary" {A}>예약하기</a>\n')
     # 휴대폰 하단 고정 버튼: 전화 / 네이버 예약 / 길찾기 / 블로그

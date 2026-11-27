@@ -77,7 +77,7 @@ TOP=f'''  <p class="cat-label">요즘 많이 찾는 칼럼</p>
       var c=0; s.querySelectorAll('.item').forEach(function(a){ var ok=a._k.indexOf(t)>-1; a.hidden=!ok; if(ok) c++; });
       s.hidden = c===0; n+=c;
     });
-    msg.textContent = n ? '검색 결과 '+n+'편' : '찾는 칼럼이 없습니다. 증상이 궁금하시면 0507-1495-4600으로 전화 주세요.';
+    msg.textContent = n ? '검색 결과 '+n+'편' : '찾는 칼럼이 없습니다. 증상이 궁금하시면 032-575-4600으로 전화 주세요.';
   }
   q.addEventListener('input', search);
   var p0=new URLSearchParams(location.search).get('q'); if(p0){ q.value=p0; search(); }
