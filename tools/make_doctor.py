@@ -121,6 +121,6 @@ for n in ld['@graph']:
         per['image']=BASE+'images/doctor.jpg'
         per['knowsAbout']=['통증 관리','추나 요법','약침','초음파 가이드 약침','갱년기 다이어트','한약']
         per['description']=DESC
-        n['dateModified']='2026-10-15'
+        n['dateModified']='2026-11-27'
 s=s[:m.start(2)]+json.dumps(ld,ensure_ascii=False,indent=2)+s[m.end(2):]
 open(p,'w',encoding='utf-8').write(s); print('doctor.html 갱신')

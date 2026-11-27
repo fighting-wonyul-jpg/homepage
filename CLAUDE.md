@@ -30,7 +30,7 @@
 
 헤더(로고, 전화 예약) → 제목·작성자(원장 소개 링크)·날짜 → 표지 → 핵심 답변 → 목차 → 본문 섹션 → 자주 묻는 질문 8개 → 글쓴이 소개(`.author`) → 진료 안내(`.visit`) → 전화·지도·블로그 버튼 → 함께 읽으면 좋은 칼럼 3개 → 참고 자료 → 내원 안내(`.area`) → 안내문 → 휴대폰 하단 고정 버튼(`.mbar`).
 본문 중 치료 섹션 바로 뒤에 블로그 안내 상자(`.blogbox`)가 있으며, 네이버 블로그 링크 카드(원장 사진 썸네일·제목·요약·m.blog.naver.com, 링크는 블로그 글 목록 PostList)로 되어 있습니다(`tools/apply_blogcard.py`, 새 칼럼은 `new_column.py finish`가 넣음).
-구조화 데이터(JSON-LD): Article(작성자 Person, url은 원장 소개, sameAs 유튜브·블로그), MedicalClinic(주소·전화·진료시간), FAQPage, BreadcrumbList.
+구조화 데이터(JSON-LD): Article(작성자 Person @id doctor.html#doctor, url은 원장 소개, sameAs 유튜브·블로그, worksFor 한의원), MedicalClinic(@id column/#clinic, 주소·전화·진료시간), FAQPage, BreadcrumbList. 원장 소개의 Person.worksFor에는 한의원 정보 전체가 들어갑니다(`tools/apply_entity_links.py`, build_index.py가 부름).
 
 본문 섹션 순서와 id: check(체크리스트 6개) / why(원인·기준) / red(다른 진료나 응급이 먼저인 신호) / km(한의학적 해석) / types(유형 카드 3~4개) / exam(진찰) / treat(1. 침 치료 2. 약침 3. 한약) / road(치료 순서) / home(생활 관리 5개) / other(다른 진료가 함께 필요한 경우). 응급이 중요한 질환은 red를 앞으로 당겨도 됩니다.
 
