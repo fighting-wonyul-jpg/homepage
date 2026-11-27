@@ -20,7 +20,7 @@
         box.innerHTML = '<p><b>' + n + '개 항목에 해당합니다.</b> 진료로 정확한 상태를 확인해 보시길 권합니다.</p>' +
           '<div class="check-btns"><a class="cb-book" href="' + BOOK + '" target="_blank" rel="noopener">네이버 예약</a>' +
           '<a class="cb-kakao" href="' + KAKAO + '" target="_blank" rel="noopener">카톡 문의</a>' +
-          '<a class="cb-call" href="tel:0507-1495-4600">전화 상담</a></div>';
+          '<a class="cb-call" href="tel:032-575-4600">전화 상담</a></div>';
         if (!shown) { shown = true; ev('checklist_result', { checked: n }); }
       } else if (n > 0) {
         box.hidden = false;
