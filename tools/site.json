@@ -434,7 +434,7 @@
   "pregnancy-edema": "임신 중 부종",
   "postpartum": "산후풍",
   "postpartum-depression": "산후우울증",
-  "postpartum-weight": "산후 비만",
+  "postpartum-weight": "산후 비만·다이어트",
   "menopause": "갱년기",
   "male-menopause": "남성 갱년기",
   "prostatitis": "전립선염",
@@ -559,15 +559,27 @@
    "뱃살"
   ],
   "postpartum-weight": [
-   "다이어트"
+   "다이어트",
+   "산후 다이어트",
+   "출산 후 다이어트",
+   "뱃살",
+   "지방분해침",
+   "감비환",
+   "고주파"
   ],
   "child-obesity": [
-   "다이어트"
+   "다이어트",
+   "소아 다이어트",
+   "어린이 다이어트"
   ],
   "menopause-diet": [
    "다이어트",
    "살",
-   "뱃살"
+   "뱃살",
+   "갱년기 비만",
+   "지방분해침",
+   "감비환",
+   "고주파"
   ],
   "tonic-herbs": [
    "보약",
