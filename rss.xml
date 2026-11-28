@@ -6,7 +6,14 @@
   <atom:link href="https://column.smileclinics.net/rss.xml" rel="self" type="application/rss+xml"/>
   <description>인천 서구 가정동 365스마일한의원 문원열 대표원장이 증상별 원인과 한방 치료, 생활 관리법을 정리한 건강 칼럼입니다.</description>
   <language>ko</language>
-  <lastBuildDate>Fri, 27 Nov 2026 09:00:00 +0900</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 09:00:00 +0900</lastBuildDate>
+  <item>
+    <title>식욕 조절이 어렵고 살이 쉽게 찐다면, 비만·다이어트 한방 치료</title>
+    <link>https://column.smileclinics.net/column/obesity.html</link>
+    <guid isPermaLink="true">https://column.smileclinics.net/column/obesity.html</guid>
+    <description>살이 쉽게 찌고 식욕 조절이 어렵다면 비만 기준과 몸 상태부터 확인합니다. 인천 서구 365스마일한의원이 비만·다이어트의 기본 원칙과 체질 유형, 지방분해침·다이어트 탕약·감비환·고주파 치료, 마황 처방의 주의점을 정리했습니다.</description>
+    <pubDate>Sat, 28 Nov 2026 09:00:00 +0900</pubDate>
+  </item>
   <item>
     <title>얼굴에 전기가 오듯 찌릿하다면, 삼차신경통 확인과 한방 치료</title>
     <link>https://column.smileclinics.net/column/trigeminal-neuralgia.html</link>
@@ -54,6 +61,20 @@
     <link>https://column.smileclinics.net/column/growing-pains.html</link>
     <guid isPermaLink="true">https://column.smileclinics.net/column/growing-pains.html</guid>
     <description>낮에는 잘 뛰어놀던 아이가 밤만 되면 양쪽 다리가 아프다고 운다면 성장통일 가능성이 높습니다. 인천 서구 365스마일한의원이 성장통의 특징, 정형외과·소아청소년과 검사가 필요한 경고 신호, 한의학의 해석, 소아 스티커침과 탕약, 집에서 하는 마사지·스트레칭을 정리했습니다.</description>
+    <pubDate>Fri, 27 Nov 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>아이가 화장실 가기를 무서워한다면, 소아 변비 한방 관리</title>
+    <link>https://column.smileclinics.net/column/child-constipation.html</link>
+    <guid isPermaLink="true">https://column.smileclinics.net/column/child-constipation.html</guid>
+    <description>아이가 화장실 가기를 무서워하고 변을 참다가 속옷에 묻힌다면 소아 변비를 살펴볼 때입니다. 인천 서구 365스마일한의원이 로마 IV 기능성 변비 기준과 배변 회피의 악순환, 응급 신호, 한의학의 변비 유형과 소아 스티커침·한약, 섬유·수분과 화장실 습관을 정리했습니다.</description>
+    <pubDate>Fri, 27 Nov 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>밥 한 숟가락에 실랑이한다면, 소아 식욕부진 한방 관리</title>
+    <link>https://column.smileclinics.net/column/child-appetite.html</link>
+    <guid isPermaLink="true">https://column.smileclinics.net/column/child-appetite.html</guid>
+    <description>밥 먹이기가 매번 실랑이라면 아이의 식욕을 함께 점검할 때입니다. 인천 서구 365스마일한의원이 성장곡선으로 진짜 식욕부진을 가려내는 법, 진료가 먼저인 신호, 억지로 먹이지 않는 식탁 원칙, 한의학의 비위허약과 네 가지 유형, 소아 스티커침·한약 관리를 정리했습니다.</description>
     <pubDate>Fri, 27 Nov 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
@@ -334,27 +355,6 @@
     <link>https://column.smileclinics.net/column/lpr.html</link>
     <guid isPermaLink="true">https://column.smileclinics.net/column/lpr.html</guid>
     <description>가슴쓰림은 없는데 목이 칼칼하고 헛기침과 쉰 목소리가 이어진다면 역류성 후두염일 수 있습니다. 이비인후과 확인이 먼저인 신호, 저녁 식사·수면 습관과 침·한약 관리를 인천 서구 365스마일한의원이 정리했습니다.</description>
-    <pubDate>Sun, 01 Nov 2026 09:00:00 +0900</pubDate>
-  </item>
-  <item>
-    <title>가슴이 두근거리고 살이 빠진다면, 갑상선기능항진증 한방 관리</title>
-    <link>https://column.smileclinics.net/column/hyperthyroidism.html</link>
-    <guid isPermaLink="true">https://column.smileclinics.net/column/hyperthyroidism.html</guid>
-    <description>두근거림, 손떨림, 체중 감소, 더위를 못 참는 갑상선기능항진증. 갑상선 폭풍 같은 응급 신호, 항갑상선제를 지키며 하는 한방 관리와 요오드 주의점을 인천 서구 365스마일한의원이 정리했습니다.</description>
-    <pubDate>Sun, 01 Nov 2026 09:00:00 +0900</pubDate>
-  </item>
-  <item>
-    <title>손가락 마디가 붓고 튀어나온다면, 손가락 관절염 한방 관리</title>
-    <link>https://column.smileclinics.net/column/finger-arthritis.html</link>
-    <guid isPermaLink="true">https://column.smileclinics.net/column/finger-arthritis.html</guid>
-    <description>손가락 마디가 붓고 혹처럼 튀어나온 손가락 관절염의 헤버덴·부샤르 결절, 퇴행성과 류마티스 관절염 구분, 류마티스내과가 먼저인 경우, 침·약침·한약 관리를 인천 서구 365스마일한의원이 정리했습니다.</description>
-    <pubDate>Sun, 01 Nov 2026 09:00:00 +0900</pubDate>
-  </item>
-  <item>
-    <title>아침엔 얼굴이, 저녁엔 다리가 붓는다면, 부종 원인 확인과 한방 관리</title>
-    <link>https://column.smileclinics.net/column/edema.html</link>
-    <guid isPermaLink="true">https://column.smileclinics.net/column/edema.html</guid>
-    <description>아침엔 얼굴이, 저녁엔 다리가 붓는다면? 심장·신장·간·갑상선·약물·정맥 문제를 먼저 확인할 신호와 한쪽 다리 부종 같은 응급 신호, 체질별 침·한약 관리를 인천 서구 365스마일한의원이 정리했습니다.</description>
     <pubDate>Sun, 01 Nov 2026 09:00:00 +0900</pubDate>
   </item>
 </channel>
