@@ -464,7 +464,7 @@
   "cold-hands-feet": "수족냉증",
   "chronic-fatigue": "만성피로",
   "long-covid": "코로나 후유증",
-  "obesity": "비만",
+  "obesity": "비만·다이어트",
   "hypertension": "고혈압",
   "diabetes": "당뇨",
   "hypothyroidism": "갑상선기능저하증",
@@ -550,7 +550,13 @@
   ],
   "obesity": [
    "다이어트",
-   "살"
+   "살",
+   "다이어트 한약",
+   "다이어트 한의원",
+   "지방분해침",
+   "감비환",
+   "고주파",
+   "뱃살"
   ],
   "postpartum-weight": [
    "다이어트"
