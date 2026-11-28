@@ -55,3 +55,6 @@ for w in ['다이어트 한약','다이어트 한의원','지방분해침','감�
     if w not in S['synonyms'][slug]: S['synonyms'][slug].append(w)
 json.dump(S,open(p,'w',encoding='utf-8'),ensure_ascii=False,indent=1); open(p,'a',encoding='utf-8').write('\n')
 print('ok')
+
+# 2026-11-28 원장님 요청 2차: 연구 규모·근거 약함·마황 부작용·임신 시 권하지 않음 같은 부정적 문장을 치료 섹션에서 뺌.
+# 지방분해침은 침+전침기 연결, 감비환은 원장 직접 제조. 최종 문장은 column/obesity.html이 기준(이 스크립트를 다시 실행하지 말 것).
